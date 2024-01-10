@@ -4,7 +4,7 @@ namespace App\Repositories;
 
 use App\Exceptions\GeneralException;
 use App\Models\User;
-use App\Models\TypeUser;
+use App\Models\UserType;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
@@ -68,7 +68,7 @@ class UserRepository
                     'to'           => $Users->lastItem(),
                 ],
                 'Users' => $Users,
-                'TypeUser'=>TypeUser::whereNotIn('id',[1])->get(),
+                'UserType'=>UserType::whereNotIn('id',[1])->get(),
             ];
     }
 

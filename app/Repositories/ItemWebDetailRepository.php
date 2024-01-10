@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Auth;
 /**
  * Class ItemRepository.
  */
-class ItemDetailRepository
+class ItemWebDetailRepository
 {
     /**
      * ItemRepository constructor.

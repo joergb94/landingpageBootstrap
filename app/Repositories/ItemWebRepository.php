@@ -4,9 +4,8 @@ namespace App\Repositories;
 
 use App\Exceptions\GeneralException;
 use App\Models\Section;
-use App\Models\Element;
 use App\Models\Item;
-use App\Models\ItemDetail;
+use App\Models\ItemWebDetail;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
@@ -14,14 +13,14 @@ use Illuminate\Support\Facades\Auth;
 /**
  * Class ItemRepository.
  */
-class ItemRepository
+class ItemWebRepository
 {
     /**
      * ItemRepository constructor.
      *
-     * @param  Item  $model
+     * @param  ItemWeb  $model
      */
-    public function __construct(Item $model, ItemDetail $modelDetail)
+    public function __construct(ItemWeb $model, ItemWebDetail $modelDetail)
     {
         $this->model = $model;
         $this->modelDetail = $modelDetail;
@@ -50,7 +49,6 @@ class ItemRepository
                 ],
                 'Items' => $Items,
                 'Section'=>Section::find($section),
-                'Elements'=>Element::where('section_id',$section)->get(),
             ];
     }
 
