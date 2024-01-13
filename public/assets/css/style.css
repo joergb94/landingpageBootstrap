@@ -9,7 +9,7 @@
 # General
 --------------------------------------------------------------*/
 body {
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   color: #444444;
 }
 
@@ -24,7 +24,7 @@ a:hover {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Jost", sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 /*--------------------------------------------------------------
@@ -370,18 +370,17 @@ h1, h2, h3, h4, h5, h6 {
 --------------------------------------------------------------*/
 #hero {
   width: 100%;
-  height: 80vh;
-  background: #37517e;
+  height: 100vh;
+  background: #3D3868;
 }
 
 #hero .container {
-  padding-top: 72px;
+  padding-top: 0px;
 }
 
 #hero h1 {
   margin: 0 0 10px 0;
-  font-size: 48px;
-  font-weight: 700;
+  font-size: 64px;
   line-height: 56px;
   color: #fff;
 }
@@ -392,22 +391,23 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 24px;
 }
 
+#hero .hero-div{
+  padding-top: 10%;
+}
+
+
 #hero .btn-get-started {
-  font-family: "Jost", sans-serif;
-  font-weight: 500;
-  font-size: 16px;
+  font-size: 28px;
   letter-spacing: 1px;
   display: inline-block;
   padding: 10px 28px 11px 28px;
-  border-radius: 50px;
   transition: 0.5s;
-  margin: 10px 0 0 0;
   color: #fff;
-  background: #47b2e4;
+  background: #438E8E;
 }
 
 #hero .btn-get-started:hover {
-  background: #209dd8;
+  background: #21f1f1;
 }
 
 #hero .btn-watch-video {
