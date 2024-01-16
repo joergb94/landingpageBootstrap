@@ -2,8 +2,9 @@
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
-          <h2>Services</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+          <h2>Conocenos</h2>
+          <p><strong>FUSIONAMOS LA INNOVACIÓN Y LA TECNOLOGÍA PARA OFRECER SOLUCIONES QUE IMPULSEN EL ÉXITO DE NUESTROS CLIENTES.</strong></p>
+          <p>Contamos con diversas unidades de negocio altamente especializadas en la provisión de soluciones y servicios informáticos eficientes, cada una dedicada a su área correspondiente.</p>
         </div>
 
         <div class="row  d-flex align-items-center flex-column justify-content-center">
@@ -48,19 +49,11 @@
               <div class="icon-box col-sm-8" style="color:white; background-color:#514e79;">
                   <div class="row">
                     <div class="col-sm-4">
-                      <img src="{{asset('assets/img/icons/vision.png')}}" class="img-fluid mx-auto d-block">
+                      <img src="{{asset('assets/img/icons/mission.png')}}" class="img-fluid mx-auto d-block">
                     </div>
                     <div class="col-sm-8">
-                      <h4>VISION</h4>
-                      <p>Ir más allá de lo convencional para
-                        convertirnos en el socio
-                        tecnológico de negocios de
-                        nuestros clientes mediante nuestra
-                        capacidad y compromiso
-                        inquebrantable para potenciar,
-                        expandir y perfeccionar el
-                        funcionamiento de su empresa o
-                        entidad.
+                      <h4>MISIÓN</h4>
+                      <p>Hacer accesible la excelencia tecnológica y ser una empresa reconocida por facilitar el camino de nuestros clientes con soluciones innovadoras que sean intuitivas y eficientes.
                       </p>
                     </div>
                   </div>
