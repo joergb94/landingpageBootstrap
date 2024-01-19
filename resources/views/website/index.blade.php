@@ -48,9 +48,9 @@
 
   <main id="main">
 
-    <!-- ======= Cliens Section ======= -->
+    <!-- ======= Cliens Section ======= 
     @include('website.items.main.clien')
-    <!-- End Cliens Section -->
+    End Cliens Section -->
 
     <!-- ======= About Us Section ======= -->
     @include('website.items.main.aboutus')
@@ -68,25 +68,25 @@
     @include('website.items.main.services')
     <!-- End Services Section -->
 
-    <!-- ======= Cta Section ======= -->
+    <!-- ======= Cta Section ======= 
     @include('website.items.main.cta')
-    <!-- End Cta Section -->
+    End Cta Section -->
 
-    <!-- ======= Portfolio Section ======= -->
+    <!-- ======= Portfolio Section ======= 
     @include('website.items.main.portfolio')
-    <!-- End Portfolio Section -->
+     End Portfolio Section -->
 
-    <!-- ======= Team Section ======= -->
+    <!-- ======= Team Section ======= 
     @include('website.items.main.team')
-    <!-- End Team Section -->
+     End Team Section -->
 
-    <!-- ======= Pricing Section ======= -->
+    <!-- ======= Pricing Section ======= 
     @include('website.items.main.pricing')
-    <!-- End Pricing Section -->
+     End Pricing Section -->
 
-    <!-- ======= Frequently Asked Questions Section ======= -->
+    <!-- ======= Frequently Asked Questions Section ======= 
     @include('website.items.main.frequently')
-    <!-- End Frequently Asked Questions Section -->
+    End Frequently Asked Questions Section -->
 
     <!-- ======= Contact Section ======= -->
     @include('website.items.main.contact')

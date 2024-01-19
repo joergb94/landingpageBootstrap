@@ -1805,3 +1805,10 @@ section {
     padding-top: 4px;
   }
 }
+
+.hidden {
+  display: none;
+}
+.block {
+  display: block;
+}

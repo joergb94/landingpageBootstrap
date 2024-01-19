@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
+            $table->softDeletes();
 
               //foreing key 
               $table->foreign('user_type_id')->references('id')->on('user_types')->onDelete('cascade');

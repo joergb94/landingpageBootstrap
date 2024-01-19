@@ -254,4 +254,20 @@
     });
   });
 
+
+  
 })()
+
+
+  /**
+   * hide and show divs 
+   */
+
+  function toggleDiv() {
+  
+      var element = document.getElementById('div1');
+      element.classList.toggle("hidden");
+
+      var element = document.getElementById('div2');
+      element.classList.toggle("hidden");
+  }
