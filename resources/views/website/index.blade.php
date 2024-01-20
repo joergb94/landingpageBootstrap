@@ -60,9 +60,9 @@
     @include('website.items.main.whyus')
    <!-- End Why Us Section -->
 
-    <!-- ======= Skills Section ======= -->
+    <!-- ======= Skills Section ======= 
     @include('website.items.main.skills')
-   <!-- End Skills Section -->
+    End Skills Section -->
 
     <!-- ======= Services Section ======= -->
     @include('website.items.main.services')
