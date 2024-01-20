@@ -830,6 +830,7 @@ section {
   padding: 50px 30px;
   transition: all ease-in-out 0.4s;
   background: #fff;
+  border-radius: 10px;
 }
 
 .services .icon-box .icon {
@@ -1386,9 +1387,9 @@ section {
  /** border-top: 3px solid #47b2e4;
   border-bottom: 3px solid #47b2e4;**/
   padding: 30px;
-  background: #fff;
   width: 100%;
-  /**box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.1);**/
+  /**background: #fff;
+  box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.1);**/
 }
 
 .contact .info i {
@@ -1458,8 +1459,8 @@ section {
  /** border-top: 3px solid #47b2e4;
   border-bottom: 3px solid #47b2e4;**/
   padding: 30px;
-  background: #fff;
- /** box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.12);**/
+  /**background: #fff;
+  box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.12);**/
 }
 
 .contact .php-email-form .form-group {
@@ -1822,6 +1823,7 @@ section {
   width: 25%;
   margin-right: 5px;
   margin-bottom: 5px;
+  
 }
 
 

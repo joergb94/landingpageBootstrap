@@ -1,4 +1,4 @@
-<section id="services" class="services section-bg">
+<section id="services" class="services section-bg" style="background-image:url('{{asset('assets/img/background/2.png')}}'); background-repeat: no-repeat; background-size:cover; background-size: 100% 100%;">
       <div class="col-sm-10 mx-auto d-block" data-aos="fade-up">
 
         <div class="section-title">

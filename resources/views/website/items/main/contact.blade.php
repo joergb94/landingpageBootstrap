@@ -1,4 +1,4 @@
-<section id="contact" class="contact">
+<section id="contact" class="contact" style="background-image:url('{{asset('assets/img/background/3.png')}}'); background-repeat: no-repeat; background-size:cover; background-size: 100% 100%;">
       <div class="col-sm-10 mx-auto d-block" data-aos="fade-up">
 
         <div class="section-title">
