@@ -40,7 +40,7 @@ Route::get('/site', [WebSiteController::class, 'index']);
 Route::post('/send', [WebSiteController::class, 'send_mail']);
 
 
-Route::prefix('dedicated')->group(function() {
+Route::prefix('adminFlex')->group(function() {
         Auth::routes([
             "register" => false,
             "reset"=>false
@@ -51,7 +51,7 @@ Route::prefix('dedicated')->group(function() {
 
 
 Route::group(['middleware'=>['auth']], function(){
-    Route::get('/home', [AdminSiteController::class, 'index']);
+    Route::get('/home', [HomeController::class, 'index']);
 
     //user
     Route::get('/users', [UserController::class, 'index']);

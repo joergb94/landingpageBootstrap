@@ -8,19 +8,14 @@ if (!function_exists('validateAccess')) {
    
     function validateAccess($user,$menu_id)
     {
-        if($user && $menu_id){
-            //validate access of user     
-            $access=TypeUserDetail::where('user_type_id',$user->user_type_id)
-                                    ->where('data_menu_id',$menu_id)
-                                    ->where('active',1)
-                                    ->exists();
-        }else{
-
-            $access=false;
-        }
-
-      return $access;
+      return ($user && $menu_id)
+                ? TypeUserDetail::where('user_type_id',$user->user_type_id)
+                                ->where('data_menu_id',$menu_id)
+                                ->where('active',1)
+                                ->exists() 
+                : false;
     }
+    
 }
 
 
