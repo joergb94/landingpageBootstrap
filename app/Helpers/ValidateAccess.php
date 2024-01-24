@@ -1,7 +1,7 @@
 <?php
 
-use App\Models\Data_menu;
-use App\Models\TypeUserDetail;
+use App\Models\MenuData;
+use App\Models\UserTypeDetail;
 
 if (!function_exists('validateAccess')) {
  
@@ -9,8 +9,8 @@ if (!function_exists('validateAccess')) {
     function validateAccess($user,$menu_id)
     {
       return ($user && $menu_id)
-                ? TypeUserDetail::where('user_type_id',$user->user_type_id)
-                                ->where('data_menu_id',$menu_id)
+                ? UserTypeDetail::where('user_type_id',$user->user_type_id)
+                                ->where('menu_data_id',$menu_id)
                                 ->where('active',1)
                                 ->exists() 
                 : false;
