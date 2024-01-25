@@ -2,6 +2,7 @@
 
 use App\Models\MenuData;
 use App\Models\UserTypeDetail;
+use Illuminate\Support\Facades\Auth;
 
 if (!function_exists('accesUrl')) {
  
@@ -33,9 +34,10 @@ if (!function_exists('accesUrl')) {
        
 
         $menu=[
-          'menu_data'=>$menu_data,
+          'data_menu'=>$menuU,
           'access'=>$access,
-          'user_type'=>$user_type,
+          'type_user'=>$user_type,
+          'user'=>Auth::user(),
         ];  
    
       return $menu;

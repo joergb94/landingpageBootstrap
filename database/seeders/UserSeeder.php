@@ -16,12 +16,16 @@ class UserSeeder extends Seeder
     {
         $adminUser = [
             ['user_type_id' =>1,
-            'name'=> 'adminFLEX',
+            'name'=> 'admin',
+            'last_name'=> 'Flex Betta',
+            'phone'=>'999999999999',
             'email'=>'adminFLEX@flexbetta.com',
             'password'=> bcrypt('adminFLEX2020'),],
 
             ['user_type_id' =>2,
-            'name'=> 'managerFLEX',
+            'name'=> 'manager',
+            'last_name'=> 'Flex Betta',
+            'phone'=>'999999999999',
             'email'=>'managerFLEX@flexbetta.com',
             'password'=> bcrypt('managerFLEX2020'),],
 

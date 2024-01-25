@@ -54,12 +54,16 @@ Route::group(['middleware'=>['auth']], function(){
     Route::get('/home', [HomeController::class, 'index']);
 
     //user
+    
     Route::get('/users', [UserController::class, 'index']);
-    Route::post('/users/add', [UserController::class, 'store']);
-    Route::post('/users/update', [UserController::class, 'update']);
-    Route::post('/users/password', [UserController::class, 'change_password']);
-    Route::post('/users/change_status',[UserController::class, 'change_status']);
-    Route::post('/users/deleteOrResotore',[UserController::class, 'deleteOrResotore']);
+    Route::get('/users/create', [UserController::class, 'create']);
+    Route::post('/users/create', [UserController::class, 'store']);
+    Route::get('/users/{id}', [UserController::class, 'detail']);
+    Route::get('/users/{id}/edit', [UserController::class, 'edit']);
+    Route::put('/users/{id}', [UserController::class, 'update']);
+    Route::get('/users/{id}/editpass', [UserController::class, 'editPassword']);
+    Route::put('/users/{id}/pass', [UserController::class, 'updatePassword']);
+    Route::delete('/users/{id}', [UserController::class, 'deleteOrResotore']);
 
     //items
     Route::get('/items', [AdminSiteController::class, 'index']);

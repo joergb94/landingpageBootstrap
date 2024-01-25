@@ -8,6 +8,7 @@ use App\Models\UserType;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
 
 /**
  * Class UserRepository.
@@ -25,53 +26,57 @@ class UserRepository
     }
 
 
-          /**
-     * @param int    $paged
-     * @param string $orderBy
-     * @param string $sort
-     *
-     * @return mixed
+     /**
+     * It takes a search term, a criterion, a status, a profile and a location and returns a paginated
+     * list of users
+     * 
+     * @param criterion the column name to search
+     * @param search the search term
+     * @param status 1 =&gt; active, D =&gt; deleted
+     * @param profile is the type of user, for example, if it is a student, a teacher, etc.
+     * @param location is the location of the user
+     * 
+     * @return LengthAwarePaginator A LengthAwarePaginator
      */
-    public function getSearchPaginated($criterion, $search, $status)
-    {
+    public function getSearchPaginated($criterion,$search,$status, $profile): LengthAwarePaginator
+    {              
+
+                    $rg = (strlen($criterion) > 0 &&  strlen($search) > 0) 
+                    ? $this->model->where('id','>',1)->where('id','!=',Auth::user()->id)->where($criterion, 'like', '%'. $search . '%')
+                    : $this->model->where('id','>',1)->where('id','!=',Auth::user()->id);
+
             
-        $rg = (strlen($criterion) > 0 &&  strlen($search) > 0) 
-                     ? $this->model->where($criterion, 'like', '%'. $search . '%')->whereNotIn('type_user_id',[1])
-                     : $this->model->where('id','>',0)->whereNotIn('type_user_id',[1]);
-                
-                if($status != 'all'){
+                    if($profile !='all'){
+                        $rg->where('user_type_id',$profile);
+                    }
 
-                        switch ($status) {
-                            case 1:
-                                $rg->active();
-                            break;
-                            case 2:
-                                $rg->active(false);
-                            break;
-                            case 'D':
-                                $rg->onlyTrashed();
-                            break;
-                            default:
-                                $rg->active();
-                        } 
-                }
-                
-                $Users = $rg->orderBy('id', 'desc')->paginate(10);
+                    switch ($status) {
+                        case 1:
+                            $rg;
+                        break;
+                        case 'D':
+                            $rg->onlyTrashed();
+                        break;
+                } 
 
-        return [
-                'pagination' => [
-                    'total'        => $Users->total(),
-                    'current_page' => $Users->currentPage(),
-                    'per_page'     => $Users->perPage(),
-                    'last_page'    => $Users->lastPage(),
-                    'from'         => $Users->firstItem(),
-                    'to'           => $Users->lastItem(),
-                ],
-                'Users' => $Users,
-                'UserType'=>UserType::whereNotIn('id',[1])->get(),
-            ];
+                    $Users = $rg->orderBy('id', 'desc')->paginate(10);
+
+            return $Users;
     }
 
+    public function findById(int $id):User{
+        return $this->model->withTrashed()->find($id);
+    }
+
+    public function findDataToBlade(int $id = null){
+        $data = []; 
+        $data['type'] =  Auth::user()->type_user_id == 1?UserType::all():UserType::where('id','>',1)->get();
+        if($id > 0){
+            $data['data']= $this->findById($id);
+        }
+
+        return $data;
+    }
   
     /**
      * @param array $data
@@ -84,7 +89,7 @@ class UserRepository
     {
         return DB::transaction(function () use ($data) {
             $User = $this->model::create([
-                'type_user_id'=>$data['type'],
+                'use_type_id'=>$data['type'],
                 'name' => $data['name'],
                 'email' => $data['email'],
                 'password' =>Hash::make($data['password']),
@@ -115,7 +120,7 @@ class UserRepository
         
         return DB::transaction(function () use ($User, $data) {
             if ($User->update([
-                'type_user_id'=>$data['type'],
+                'use_type_id'=>$data['type'],
                 'name' => $data['name'],
                 'email' => $data['email'],
             ])) {
