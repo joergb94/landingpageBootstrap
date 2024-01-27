@@ -48,6 +48,7 @@
         
         <!-- HEADER MOBILE-->
         @include('layouts/items/loading')
+        
         @if(isset($dm['data_menu']))
             <!-- HEADER MOBILE-->
             @include('layouts/items/headerMobile')

@@ -15,31 +15,22 @@ if (!function_exists('accesUrl')) {
                                 ->where('menu_data_id',$menu_id)
                                 ->where('active',1)
                                 ->exists();
-        if($access == true){
+ 
           //get all data for user menu
-          $menuU = UserTypeDetail::where('user_type_id',  $user->user_type_id);
-
-          $menuU->with(['menu_data' => function($query) {
-              $query->orderby('prioridad');
-            }]);
-
-          $menu_data=$menuU->get();
+          $menuU = UserTypeDetail::where('user_type_id',  $user->user_type_id)->with(['menu_data'])->get();
+            
           $user_type = $user->user_type_id;
         
-        }else{
-          
-           $menu_data=[];
-           $user_type =0;
-        }
+ 
        
 
         $menu=[
-          'data_menu'=>$menuU,
+          'data_menu'=>isset($menuU)?$menuU:[],
           'access'=>$access,
-          'type_user'=>$user_type,
+          'type_user'=>isset($user_type)?$user_type:0,
           'user'=>Auth::user(),
         ];  
-   
+  
       return $menu;
     }
 }

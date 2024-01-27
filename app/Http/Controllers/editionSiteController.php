@@ -3,21 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Requests\User\UserRequest;
-use App\Http\Requests\User\UserIdRequest;
-use App\Http\Requests\User\UserPassRequest;
-use App\Http\Requests\User\UserUpdateRequest;
-use App\Http\Requests\User\UserStoreRequest;
-use App\Models\User;
-use App\Models\UserType;
-use App\Repositories\UserRepository;
-use Carbon\Carbon; 
 use Illuminate\Support\Facades\Auth;
 
-
-class UserController extends Controller
+class editionSiteController extends Controller
 {
-      /**
+       /**
      * CompanyController constructor.
      *
      * @param UserRepository $UserRepository

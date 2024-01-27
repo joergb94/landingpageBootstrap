@@ -39,25 +39,25 @@
 <body>
 
   <!-- ======= Header ======= -->
-  @include('website.items.header')
+  @include('website.items.navbar',['data' => ''])
   <!-- End Header -->
 
   <!-- ======= Hero Section ======= -->
-  @include('website.items.hero')
+  @include('website.items.header',['data' => ''])
   <!-- End Hero -->
 
   <main id="main">
 
     <!-- ======= Cliens Section ======= 
-    @include('website.items.main.clien')
+    @include('website.items.main.clients')
     End Cliens Section -->
 
     <!-- ======= About Us Section ======= -->
-    @include('website.items.main.aboutus')
+    @include('website.items.main.about-us')
     <!-- End About Us Section -->
 
     <!-- ======= Why Us Section ======= -->
-    @include('website.items.main.whyus')
+    @include('website.items.main.why-us')
    <!-- End Why Us Section -->
 
     <!-- ======= Skills Section ======= 
@@ -95,7 +95,7 @@
   </main><!-- End #main -->
 
   <!-- ======= Footer ======= -->
-  @include('website.items.footer')
+  @include('website.items.footer',['data' => ''])
   <!-- End Footer -->
 
   <div id="preloader"></div>

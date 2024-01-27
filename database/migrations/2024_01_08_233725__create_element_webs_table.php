@@ -11,13 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('type_item_webs', function (Blueprint $table) {
+        Schema::create('element_webs', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('tag');
-            $table->unsignedTinyInteger('is_main')->default(1);
+            $table->string('style');
             $table->timestamps();
-            $table->softDeletes();
         });
     }
 
@@ -27,7 +25,7 @@ return new class extends Migration
     public function down(): void
     {
         Schema::disableForeignKeyConstraints();
-        Schema::dropIfExists('type_item_webs');
+        Schema::dropIfExists('element_webs');
         Schema::enableForeignKeyConstraints();
     }
 };

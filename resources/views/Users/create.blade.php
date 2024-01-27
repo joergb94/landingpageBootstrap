@@ -4,7 +4,7 @@
 
       <!-- Modal Header -->
       <div class="modal-header">
-        <h4 class="modal-title">Create User</h4>
+        <h4 class="modal-title">Creacion de Usuario</h4>
         <button type="button" class="close" data-dismiss="modal">&times;</button>
       </div>
 
@@ -13,15 +13,15 @@
         <form id="user-form">
           <div class="row">
             <div class="form-group col-6">
-              <label>Name(s):</label>
+              <label>Nombre(s):</label>
               <input type="text" id="name" name="name" value="" class="form-control">
             </div>
             <div class="form-group col-6">
-              <label>Last Name(s):</label>
+              <label>Apellido(s):</label>
               <input type="text" id="last_name" name="last_name" value="" class="form-control">
             </div>
             <div class="form-group col-6">
-              <label>Phone:</label>
+              <label>Telefono:</label>
               <input type="text" id="phone" name="phone" value="" class="form-control">
             </div>
             <div class="form-group col-6">
@@ -29,9 +29,9 @@
               <input type="text" id="email" value="" name="email" class="form-control">
             </div>
             <div class="form-group col-12">
-              <label>Profile:</label>
+              <label>Perfil:</label>
               <select class="form-control" id="type" name="type">
-                <option value="" selected>Select a Profile</option>
+                <option value="" selected>Seleccione un perfil</option>
                 @foreach($type as $t)
                 <option value="{{$t->id}}">{{$t->name}}</option>
                 @endforeach

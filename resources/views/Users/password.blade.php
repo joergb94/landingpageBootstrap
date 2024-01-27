@@ -4,7 +4,7 @@
 
       <!-- Modal Header -->
       <div class="modal-header">
-        <h4 class="modal-title">Update Password</h4>
+        <h4 class="modal-title">Actualizacion de contraseña</h4>
         <button type="button" class="close" data-dismiss="modal">&times;</button>
       </div>
 
@@ -12,11 +12,11 @@
       <div class="modal-body">
         <form id="user-form">
           <div class="form-group">
-            <label>Password:</label>
+            <label>Contraseña:</label>
             <input type="password" id="password" value="" name="password" class="form-control">
           </div>
           <div class="form-group">
-            <label>Confirm Password:</label>
+            <label>Confirmar contraseña:</label>
             <input type="password" id="password_confirmation" value="" name="password_confirmation"
               class="form-control">
           </div>

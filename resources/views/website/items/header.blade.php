@@ -1,19 +1,15 @@
-<header id="header" style="background-image: url('../../media/examples/lizard.png');" class="fixed-top">
-    <div class="container d-flex align-items-center">
+<section id="hero" class="d-flex align-items-center" style="background-image:url('{{asset('assets/img/background/1.png')}}'); background-repeat: no-repeat; background-size:cover; background-size: 100% 100%;">
 
-      <h1 class="logo me-auto"><a href="index.html">Arsha</a></h1>
-      <!-- Uncomment below if you prefer to use an image logo -->
-      <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
-
-      <nav id="navbar" class="navbar">
-        <ul>
-          <li><a class="nav-link scrollto active" href="#hero">Inicio</a></li>
-          <li><a class="nav-link scrollto" href="#about">Conocenos</a></li>
-          <li><a class="nav-link scrollto" href="#services">Servicios</a></li>
-          <li><a class="nav-link scrollto" href="#contact">Contacto</a></li>
-        </ul>
-        <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav><!-- .navbar -->
-
+  <div class="hero-content container">
+    <div class="row">
+      <div class="col-sm-12 d-flex align-items-center flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="200">
+          <h1>Soluciones <b>únicas</b> y</h1>
+          <h1><b>flexibles</b> a tu alcance.</h1>
+        <div class="hero-div d-flex justify-content-center justify-content-lg-start">
+          <a href="#about" class="btn btn-get-started scrollto">Contactanos</a>
+        </div>
+      </div>
     </div>
-  </header>
+  </div>
+
+</section>

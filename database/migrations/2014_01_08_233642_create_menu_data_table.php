@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('name', 100);
             $table->string('icon', 100);
             $table->string('link', 100);
-            $table->string('prioridad', 10);
+            $table->string('priority', 10);
             $table->boolean('active')->default(1);
            
             $table->timestamps();

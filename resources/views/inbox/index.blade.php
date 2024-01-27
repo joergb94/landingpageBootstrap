@@ -6,12 +6,12 @@
     <div class="row">
       <div class="col-sm-6">
         <h4 class="card-title mb-0">
-          Usuarios  <i class='fa fa-users'></i>
+          Inicio  <i class='fa fa-home'></i>
         </h4>
       </div>
       <!--col-->
       <div class="col-sm-6">
-        @include('users.items.header-buttons')
+        @include('home.items.header-buttons')
       </div>
       <!--col-->
     </div>
@@ -19,9 +19,9 @@
 
     </br>
     <div class="col-sm-12">
-      @include('users.items.search')
+      @include('home.items.search')
     </div>
-    @include('users.items.table')
+    @include('home.items.table')
     <div id="loading" style="display:none" class="col-sm-12 text-center">
       </br></br></br>
       <div class="col-sm-12">
@@ -49,5 +49,5 @@
 </div>
 @endsection
 @section('js')
-<script src="{{asset('back-office/js/actions/users.js')}}"></script>
+<!-- <script src="{{asset('back-office/js/actions/home.js')}}"></script>-->
 @endsection

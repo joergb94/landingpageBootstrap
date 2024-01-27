@@ -15,18 +15,14 @@ class MenuDataSeeder extends Seeder
     public function run()
     {
         $menus = [
-            ['name'=> 'Inicio','icon'=> 'ti-home','link'=>'/home','prioridad'=> '3','active'=> 1,],
-            ['name'=> 'Usuarios','icon'=> 'ti-user','link'=>'/users','prioridad'=> '3','active'=> 1,],
-            ['name'=> 'Tickets Vendidos','icon'=> 'ti-receipt','link'=>'/tickets','prioridad'=> '3','active'=> 1,],
-            ['name'=> 'Ganadores','icon'=> 'ti-star','link'=>'/winners','prioridad'=> '3','active'=> 1,],
-            ['name'=> 'Depositos','icon'=> 'ti-money','link'=>'/deposits','prioridad'=> '3','active'=> 1,],
-            ['name'=> 'Calendario de Juegos','icon'=> 'ti-calendar','link'=>'/schedule','prioridad'=> '3','active'=> 1,],
-            ['name'=> 'Reportes','icon'=> 'ti-bookmark-alt','link'=>'/reports','prioridad'=> '3','active'=> 1,],
-            ['name'=> 'Mis Tickets','icon'=> 'ti-notepad','link'=>'/my-tickets','prioridad'=> '3','active'=> 1,],
+            ['name'=> 'Inicio','icon'=> 'fa fa-home','link'=>'/home','priority'=> '3','active'=> 1,],
+            ['name'=> 'Usuarios','icon'=> 'fa fa-user','link'=>'/users','priority'=> '3','active'=> 1,],
+            ['name'=> 'Edicion de sitio','icon'=> 'fa fa-gears','link'=>'/edit-web','priority'=> '3','active'=> 1,],
+            ['name'=> 'Correos recibidos','icon'=> 'fa fa-inbox','link'=>'/inbox','priority'=> '3','active'=> 1,],
       ];
       
       foreach($menus as $menu){
             DB::table('menu_data')->insert($menu);
-                        }
+        }
     }
 }

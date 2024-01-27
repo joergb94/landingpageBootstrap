@@ -22,20 +22,21 @@ class TypeUserSeeder extends Seeder
         foreach($types as $type){
                 DB::table('user_types')->insert($type);
             }
-            $tu_prof = [
-                //Admin
-                  ['user_type_id'=> 1,'menu_data_id'=> 1,'active'=> 1,
-                    'user_type_id'=> 1,'menu_data_id'=> 2,'active'=> 1,],
-                  
-                
-
-                //Gestor
-                  ['user_type_id'=> 2,'menu_data_id'=> 1,'active'=> 1,],
-
-                ];
-      
-            foreach($tu_prof as $tu_prof){
-              DB::table('user_type_details')->insert($tu_prof);
-            }
+           
+            $tu_prof_detail= [
+              // Admin
+              ['user_type_id' => 1, 'menu_data_id' => 1, 'active' => 1],
+              ['user_type_id' => 1, 'menu_data_id' => 2, 'active' => 1],
+              ['user_type_id' => 1, 'menu_data_id' => 3, 'active' => 1],
+              ['user_type_id' => 1, 'menu_data_id' => 4, 'active' => 1],
+          
+              // Gestor
+              ['user_type_id' => 2, 'menu_data_id' => 1, 'active' => 1],
+              ['user_type_id' => 2, 'menu_data_id' => 3, 'active' => 1],
+              ['user_type_id' => 2, 'menu_data_id' => 4, 'active' => 1],
+          ];
+          
+           DB::table('user_type_details')->insert($tu_prof_detail);
+            
     }
 }

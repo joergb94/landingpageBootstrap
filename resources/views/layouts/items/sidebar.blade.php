@@ -20,16 +20,13 @@
     <nav class="navbar-sidebar">
       <ul class="list-unstyled navbar__list">
 
-        <ul id="menuSon" class='list-unstyled navbar__sub-list js-sub-list'>
-          @forelse($dm['data_menu'] as $menu)
-
-            @if($menu->id != 15)
-              <li id="menu{{$menu->id}}">
-                <a href="{{$menu->link}}">
-                  <i class="{{$menu->icon}}"></i>{{$menu->name}}</a>
-              </li>
-            @endif
-          @empty
+        <ul id="menuSon" class='list-unstyled navbar__list'>
+            @forelse($dm['data_menu'] as $menu)
+                <li id="menu{{$menu['menu_data']->id}}">
+                  <a href="/adminFlex{{$menu['menu_data']->link}}">
+                    <i class="{{$menu['menu_data']->icon}}"></i>{{$menu['menu_data']->name}}</a>
+                </li>
+            @empty
           <li>
             Sin Accessos
           </li>
