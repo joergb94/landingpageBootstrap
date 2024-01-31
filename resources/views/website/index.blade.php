@@ -42,60 +42,29 @@
   @include('website.items.navbar',['data' => ''])
   <!-- End Header -->
 
-  <!-- ======= Hero Section ======= -->
-  @include('website.items.header',['data' => ''])
-  <!-- End Hero -->
+  @foreach($data['header_items'] as $item_header)
+    <!-- ======= Hero Section ======= -->
+    @include('website.items.'.$item_header->type_item_web->name,['data' => $item_header])
+    <!-- End Hero -->
+  @endforeach
 
   <main id="main">
 
-    <!-- ======= Cliens Section ======= 
-    @include('website.items.main.clients')
-    End Cliens Section -->
+    @foreach($data['main_items'] as $main_item)
+    
+      @include('website.items.main.'.$main_item->type_item_web->name,['data' =>  $main_item])
 
-    <!-- ======= About Us Section ======= -->
-    @include('website.items.main.about-us')
-    <!-- End About Us Section -->
-
-    <!-- ======= Why Us Section ======= -->
-    @include('website.items.main.why-us')
-   <!-- End Why Us Section -->
-
-    <!-- ======= Skills Section ======= 
-    @include('website.items.main.skills')
-    End Skills Section -->
-
-    <!-- ======= Services Section ======= -->
-    @include('website.items.main.services')
-    <!-- End Services Section -->
-
-    <!-- ======= Cta Section ======= 
-    @include('website.items.main.cta')
-    End Cta Section -->
-
-    <!-- ======= Portfolio Section ======= 
-    @include('website.items.main.portfolio')
-     End Portfolio Section -->
-
-    <!-- ======= Team Section ======= 
-    @include('website.items.main.team')
-     End Team Section -->
-
-    <!-- ======= Pricing Section ======= 
-    @include('website.items.main.pricing')
-     End Pricing Section -->
-
-    <!-- ======= Frequently Asked Questions Section ======= 
-    @include('website.items.main.frequently')
-    End Frequently Asked Questions Section -->
-
-    <!-- ======= Contact Section ======= -->
-    @include('website.items.main.contact')
-    <!-- End Contact Section -->
-
+    @endforeach
+  
   </main><!-- End #main -->
 
   <!-- ======= Footer ======= -->
-  @include('website.items.footer',['data' => ''])
+  @foreach($data['footer_items'] as $item_footer)
+    <!-- ======= Hero Section ======= -->
+    @include('website.items.'.$item_footer->type_item_web->name,['data' => $item_footer])
+    <!-- End Hero -->
+  @endforeach
+
   <!-- End Footer -->
 
   <div id="preloader"></div>

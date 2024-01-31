@@ -30,7 +30,7 @@ class SectionSeeder extends Seeder
                         ['name'=> 'Contacto'],        
                     ];
  
-        $types_items =[
+        $types_elements =[
                       ['style'=>'btn','name'=>'button' ],
                       ['style'=>'btn-link','name'=>'link'],
                       ['style'=>'div','name'=>'div'],
@@ -56,82 +56,49 @@ class SectionSeeder extends Seeder
 
         $items = [
                   ['section_web_id'=>1,'type_item_web_id'=>1,'title'=>'Soluciones únicas y flexibles a tu alcance.','footer'=>'We are team of talented designers making websites with Bootstrap','image'=>'images/items/home1.png'],
-                  ['section_web_id'=>1,'type_item_web_id'=>1,'title'=>'CONÓCENOS','footer'=>'FUSIONAMOS LA INNOVACIÓN Y LA TECNOLOGÍA PARA OFRECER SOLUCIONES QUE IMPULSEN EL ÉXITO DE NUESTROS CLIENTES.','image'=>'assets/img/1.png'],
-                  ['section_web_id'=>1,'type_item_web_id'=>1,'title'=>'Some of our clients','element'=>'slide','footer'=>'end2'],
-                  ['section_web_id'=>1,'type_item_web_id'=>1,'title'=>'Do you want to be Dedicated','element'=>'div-not-head','footer'=>'end3','image'=>'images/items/home3.png'],
-                  ['section_web_id'=>2,'type_item_web_id'=>1,'title'=>'We are Dedicated People, partners that become an extension of your team','element'=>'div-not-head','footer'=>'end0','image'=>'images/items/aboutus1.png'],
-                  ['section_web_id'=>2,'type_item_web_id'=>1,'title'=>'How can we make this possible?','element'=>'div-group','footer'=>'end1'],
-                  ['section_web_id'=>2,'type_item_web_id'=>1,'title'=>'Work enviroment based on communication and people','element'=>'div-group-img','footer'=>'end2'],
-                  ['section_web_id'=>2,'type_item_web_id'=>1,'title'=>'Meet the team','element'=>'div-yellow'],
-                  ['section_web_id'=>3,'type_item_web_id'=>1,'title'=>'A partnership with us means a full support of our team','element'=>'div-not-head-left','footer'=>'end0','image'=>'images/items/ourservice1.png'],
-                  ['section_web_id'=>3,'type_item_web_id'=>1,'title'=>'IT support','element'=>'div-not-head','footer'=>'end1','image'=>'images/items/ourservice2.png'],
-                  ['section_web_id'=>3,'type_item_web_id'=>1,'title'=>'The corner stone of our costumer service','element'=>'div-group','description'=>'Our success is ensuring yours!','footer'=>'end2'],
-                  ['section_web_id'=>4,'type_item_web_id'=>1,'title'=>'We’ll be there every step of the way','element'=>'div-not-head','footer'=>'end0','image'=>'images/items/careers1.png'],
-                  ['section_web_id'=>4,'type_item_web_id'=>1,'title'=>'Become Dedicated Step by Step','element'=>'div-group-head','footer'=>'end1'],
-
+                  ['section_web_id'=>2,'type_item_web_id'=>4,'title'=>'CONÓCENOS','footer'=>'FUSIONAMOS LA INNOVACIÓN Y LA TECNOLOGÍA PARA OFRECER SOLUCIONES QUE IMPULSEN EL ÉXITO DE NUESTROS CLIENTES.','image'=>'assets/img/1.png'],
+                  ['section_web_id'=>2,'type_item_web_id'=>14,'title'=>'NUESTROS OBJETIVOS','element'=>'slide','footer'=>'somos mucho más que una empresa que te ofrece soluciones con tecnología; somos el socio tecnológico de negocios con el que puedes contar para abordar desafíos y alcanzar tus metas de manera efectiva.'],
+                  ['section_web_id'=>3,'type_item_web_id'=>11,'title'=>'SERVICIOS','element'=>'div-not-head','footer'=>'','image'=>'images/items/home3.png'],
+                  ['section_web_id'=>4,'type_item_web_id'=>6,'title'=>'SERVICIOS','element'=>'div-not-head','footer'=>'','image'=>'images/items/home3.png'],
+                  ['section_web_id'=>null,'type_item_web_id'=>2,'title'=>'SERVICIOS','element'=>'div-not-head','footer'=>'','image'=>'images/items/home3.png'],
 
         ];
 
         $item_details = [
-                  ['item_web_id'=>1,'element_web_id'=>1,'name'=>'detail11','description'=>'Contáctanos','image'=>null,],
+                  ['item_web_id'=>1,'element_web_id'=>1,'name'=>'detail11','description'=>'Contáctanos','image'=>'',],
                  
-                  ['item_web_id'=>2,'name'=>'detail21','description'=>'Hiring an in-house employee actually costs 25%-40% above their wages\/salary.','image'=>null, ''],
-                  ['item_web_id'=>2,'name'=>'detail22','description'=>'With Dedicated People you only pay for our representatives hourly rate. You get the same level of quality you expect from you current employees without the high cost of in-house labor.','image'=>null, ''],
+                  ['item_web_id'=>2,'element_web_id'=>1,'name'=>'detail21','description'=>'Contamos con diversas unidades de negocio altamente especializadas en la provisión de soluciones y servicios informáticos eficientes, cada una dedicada a su área correspondiente.','image'=>'',],
+                  ['item_web_id'=>2,'element_web_id'=>1,'name'=>'VISIÓN','description'=>'Ir más allá de lo convencional para convertirnos en el socio tecnológico de negocios de nuestros clientes mediante nuestra capacidad y compromiso inquebrantable para potenciar, expandir y perfeccionar el funcionamiento de su empresa o entidad.','image'=>'',],
+                  ['item_web_id'=>2,'element_web_id'=>1,'name'=>'MISIÓN','description'=>'Hacer accesible la excelencia tecnológica y ser una empresa reconocida por facilitar el camino de nuestros clientes con soluciones innovadoras que sean intuitivas y eficientes.','image'=>'',],
                   
-                  ['item_web_id'=>3,'name'=>'Timothy Stroud Manager - Training, Quality & Operations Support','description'=>'Dedicated People has been a reliable partner for Anserve, staffing well-spoken bi-lingual agents that cover multiple shifts for us.   They have an excellent training program, coupled with solid on-going coaching reinforcement for continual improvement.  When CoVid-19 hit, their IT staff displayed fast acting agility in arranging for all of their agents to be able to work from home with no disruption of availability or top quality service.  All in all, we have been very satisfied with our relationship with Dedicated People and see a bright future with them.','image'=>'images/ItemDetails/homedetail1.png', ''],
-                  ['item_web_id'=>3,'name'=>'Celia Vincent Broussard','description'=>'“Dedicated People was a lifesaver to Southwest Call Center, Inc. in the early days after Hurricane Laura made landfall in late August of 2020.  Our area was without power and electricity and our staff was not able to connect into our system.  We had just begun our relationship with Dedicated People, and with their help, we were able to quickly add additional agents so that we would be able to answer calls.  They have been wonderful to work with and I look forward to continuing our relationship with them.”','image'=>'images/ItemDetails/homedetail2.png', ''],
-                  ['item_web_id'=>3,'name'=>'Andrew Breischaft','description'=>'We are very impressed with Dedicated People and their whole operation!  After so many interviews and training with no long term employees to show for our own efforts, we contacted Dedicated People and now have 3 operators who are respectful, intelligent and eager to learn. Not only are you gaining an employee or employees that are trained on your company’s platform, but Dedicated People continues to work with their staff even after the training period is over and the employees have moved on to their new position(s).  The feedback, the communication, and the follow up with their staff have all been top notch!  Working with the entire team at Dedicated People, from the owner to management to the training staff, has been a pleasure as every single team member is so professional and courteous. We recommend Dedicated People wholeheartedly!','image'=>'images/ItemDetails/homedetail3.png', ''],
-                  ['item_web_id'=>3,'name'=>'detail34','description'=>'example end example end example end example endexample end example end example end example end example end example end','image'=>null, ''],
-                  ['item_web_id'=>'4','name'=>'detail41','description'=>'Work with us! We are looking for positive people who are comfortable with multitasking, have an understanding of phone etiquette, excellent verbal and written communication skills and want to grow with us.','image'=>null, ''],
+                  ['item_web_id'=>3, 'element_web_id'=>1, 'name'=>'01 Adaptación','description'=>'Adaptarnos a las metas específicas de cada cliente.','image'=>'images/ItemDetails/homedetail1.png',],
+                  ['item_web_id'=>3, 'element_web_id'=>1, 'name'=>'02 Actualizarnos','description'=>'Estar actualizados en las tendencias y avances de la tecnología.','image'=>'images/ItemDetails/homedetail2.png',],
+                  ['item_web_id'=>3, 'element_web_id'=>1, 'name'=>'03 Crear relaciones sólidas','description'=>'Nuestros clientes son nuestro pilar fundamental, por lo que es importante mantenerlos en un alto nivel de satisfacción con nuestras entregas de soluciones personalizadas en tiempo y forma. Creando así, relaciones sólidas y duraderas.','image'=>'images/ItemDetails/homedetail3.png',],
+                  ['item_web_id'=>3, 'element_web_id'=>1, 'name'=>'04 Atraer a interesados en la tecnología','description'=>'Atraer y mantener a nuevos talentos en el campo de la tecnología.','image'=>'',],
+                  ['item_web_id'=>3, 'element_web_id'=>1, 'name'=>'05 Mejorar continuamente','description'=>'Mejorar continuamente nuestros sistemas internos para reducir costos y aumentar la eficiencia.','image'=>'',],
+                  ['item_web_id'=>3, 'element_web_id'=>1, 'name'=>'06 Posicionarnos como líderes de soluciones tecnológicas','description'=>'Expandir progresivamente nuestro portafolio de productos y servicios para posicionarnos como líderes de soluciones tecnológicas.','image'=>'',],
                  
-                  ['item_web_id'=>5,'name'=>'detail51','description'=>'We understand the high demands of the TAS industry.','image'=>null, ''],
-                  ['item_web_id'=>5,'name'=>'detail52','description'=>'Our goal is to become the staffing partner that helps you succeed & grow your business','image'=>null, ''],
+                  ['item_web_id'=>4, 'element_web_id'=>1, 'name'=>'PRESENCIA WEB','description'=>'Desarrollamos y optimizamos su presencia en línea para impulsar suvisibilidad y atraer a suaudiencia objetivo.','image'=>'',],
+                  ['item_web_id'=>4, 'element_web_id'=>1, 'name'=>'CONSULTORÍA INFORMÁTICA','description'=>'Proporcionamos asesoramiento experto para ayudarle a tomar decisiones informáticas estratégicas y maximizar el rendimiento de su infraestructura.','image'=>'',],
+                  ['item_web_id'=>4, 'element_web_id'=>1, 'name'=>'SISTEMAS DE SOLUCIONES INTEGRALES','description'=>'Implementamos sistemas completos que comprenden componentes de infraestructura, software y servicios de gestión.','image'=>'',],
+                  ['item_web_id'=>4, 'element_web_id'=>1, 'name'=>'GESTIÓN DE SISTEMAS','description'=>'Optimizamos y administramos sus sistemas informáticos para garantizar un rendimiento eficiente y sin contratiempos.','image'=>'',],
+                  ['item_web_id'=>4, 'element_web_id'=>1, 'name'=>'CCTV PROFESIONAL','description'=>'Implementamos sistemas de vigilancia avanzados para garantizar la seguridad de su empresa con tecnología de vanguardia.','image'=>'',],
+                  ['item_web_id'=>4, 'element_web_id'=>1, 'name'=>'SERVICIOS DE GESTIÓN DE PROYECTOS ','description'=>'basados en TICs.','image'=>'',],
+                  ['item_web_id'=>4, 'element_web_id'=>1, 'name'=>'PRODUCTOS DE INFORMACIÓN GEOGRÁFICA ','description'=>'Ofrecemos soluciones de información basadas en GIS para el análisis espacial de datos, brindándole información valiosa para la toma de decisiones.','image'=>'',],
+                  ['item_web_id'=>4, 'element_web_id'=>1, 'name'=>'DESARROLLO DE SOFTWARE','description'=>'Creamos soluciones personalizadas para satisfacer sus requisitos específicos, utilizando las últimas tecnologías y mejores prácticas de la industria.','image'=>'',],
                  
-                  ['item_web_id'=>6,'name'=>'Trained representatives','description'=>'By creating a solid, stable work environment our partnership with your company develops highly trained representatives who are dedicated to offering top quality customer service.','image'=>'images/ItemDetails/aboutusdetail1.png', ''],
-                  ['item_web_id'=>6,'name'=>'Following the procedures','description'=>'Our trainers work closely with our clients to understand their processes and procedures.','image'=>'images/ItemDetails/aboutusdetail2.png', ''],
-                  ['item_web_id'=>6,'name'=>'Assigned a supervisor','description'=>'Once you partner up with Dedicated People, your company and representatives will be assigned a team supervisor and account manager at no extra cost to you.','image'=>'images/ItemDetails/aboutusdetail3.png', ''],
-                  ['item_web_id'=>6,'name'=>'Following the standards','description'=>'Our Dedicate People QA staff work with you to understand the standards you qualify for your in-house representatives and how.','image'=>'images/ItemDetails/aboutusdetail4.png', ''],
-                  ['item_web_id'=>6,'name'=>'Constant monitoring','description'=>'We monitor all our representatives calls closely to ensure we are providing the daily feedback.','image'=>'images/ItemDetails/aboutusdetail5.png', ''],
-                  ['item_web_id'=>7,'name'=>'CONTINUOUS EDUCATION','description'=>'We provide high quality, ongoing training to ensure our representatives are up to date with quality standards and system upgrades.','image'=>'images/ItemDetails/aboutusWE1.png', ''],
-                  ['item_web_id'=>7,'name'=>'TECHNOLOGY','description'=>'Dedicated People’s IT staff stay up to date by regularly researching upgrades and becoming educated with all of the TAS technologies available. We offer adequate IT support','image'=>'images/ItemDetails/aboutusWE2.png', ''],
-                  ['item_web_id'=>7,'name'=>'EMPLOYEE WELL-BEING','description'=>'We provide high quality, ongoing training to ensure our representatives are up to date with quality standards and system upgrades.','image'=>'images/ItemDetails/aboutusWE3.png', ''],
-                  ['item_web_id'=>7,'name'=>'DEDICATION & COMMITMENT','description'=>'We promote our staff’s commitment to the company and our clients through a positive work environment and incentive programs – at no extra cost to our clients.','image'=>'images/ItemDetails/aboutusWE4.png', ''],
-                  ['item_web_id'=>7,'name'=>'TRUST & CONFIDENCE','description'=>'Ideas, suggestions and feedback that promote our company’s and our client’s benefit come from all of our team members. As Dedicated People we are open to hearing from all our collaborators.','image'=>'images/ItemDetails/aboutusWE5.png', ''],
-                  ['item_web_id'=>7,'name'=>'EQUALITY','description'=>'Dedicated People is an equal opportunity employer. Our positive focus on our team makes us a place where people want to work.','image'=>'images/ItemDetails/aboutusWE6.png', ''],
-                  ['item_web_id'=>8,'name'=>'Don Corville','description'=>'Owner','image'=>'images/ItemDetails/DON.png', ''],
-                  ['item_web_id'=>8,'name'=>'Jason Robichaux','description'=>'Owner','image'=>'images/ItemDetails/JASON.png', ''],
-                  ['item_web_id'=>8,'name'=>'Alex Ortega','description'=>'Business Administrator','image'=>'images/ItemDetails/ALEX.png', ''],
-                  ['item_web_id'=>8,'name'=>'Melissa Araque','description'=>'Account Manager','image'=>'images/ItemDetails/MELISSA.png', ''],
-                  ['item_web_id'=>8,'name'=>'Michelle Castro','description'=>'Callcenter Manager','image'=>'images/ItemDetails/MICHELLE.png', ''],
-                  ['item_web_id'=>8,'name'=>'Juan Maldonado','description'=>'Supervisors Manager','image'=>'images/ItemDetails/JUAN.png', ''],
-                  ['item_web_id'=>8,'name'=>'Oscar Ramirez','description'=>'Hiring Manager','image'=>'images/ItemDetails/OSCAR.png', ''],
-                  ['item_web_id'=>9,'name'=>'detail81','description'=>'We take care of the complete recruiting and hiring process.','image'=>null, ''],
-                  ['item_web_id'=>9,'name'=>'detail82','description'=>'Our pricing is tiered based on the number of agents you have on your team.','image'=>null, ''],
-                  ['item_web_id'=>9,'name'=>'detail83','description'=>'You only pay your agents’ hourly rate.','image'=>null, ''],
-                  ['item_web_id'=>9,'name'=>'detail84','description'=>'We use your training guides to teach agents how to effectively take call for you.','image'=>null, ''],
-                  ['item_web_id'=>10,'name'=>'detail91','description'=>'Our team provides you with full IT assistance starting from the initial set up process.','image'=>null, ''],
-                  ['item_web_id'=>10,'name'=>'detail92','description'=>'Our equipment is updated continuously and we have the proper redundancy support onsite in case of emergencies.','image'=>null, ''],
-                 
-                  ['item_web_id'=>11,'name'=>'BEING EFFICIENT & COST-EFFECTIVE','description'=>'Partnering with us, you will see your productivity increased as you and your top staff will be able to focus on your business’ day to day activities.','image'=>'images/ItemDetails/ourservicedetail1.png', ''],
-                  ['item_web_id'=>11,'name'=>'COMPETENCE','description'=>'We handle your calls with the same level of quality you expect from your in-house staff.','image'=>'images/ItemDetails/ourservicedetail2.png', ''],
-                  ['item_web_id'=>11,'name'=>'STATE-OF-THE-ART TECHNOLOGY','description'=>'Our fully equipped facility makes remoting into your system and call handling seamless – just like in your office.','image'=>'images/ItemDetails/ourservicedetail3.png', ''],
-                  ['item_web_id'=>11,'name'=>'WORKFORCE MANAGEMENT','description'=>'You can personalize and adjust staffing and schedules to your company needs.','image'=>'images/ItemDetails/ourservicedetail4.png', ''],
-                  ['item_web_id'=>12,'name'=>'detail111','description'=>'The North American Telephone Answering Service is a fast-paced, high demand industry.','image'=>null, ''],
-                  ['item_web_id'=>12,'name'=>'detail112','description'=>'As one of our collaborators, you’ll receive continuous training & support from our dedicated team to ensure a long, successful career with Dedicated People.','image'=>null, ''],
-                  ['item_web_id'=>11,'name'=>'ADJUSTABLE KPI','description'=>'We work with you to understand and help our representatives meet the same performance metrics you measure.','image'=>'images/ItemDetails/ourservicedetail5.png', ''],
-                  ['item_web_id'=>13,'name'=>'Talk to a recruiter','description'=>'Submit your information, and one of our Talent Hunters will reach out to you.','image'=>'images/ItemDetails/careersdetail1.png', ''],
-                  ['item_web_id'=>13,'name'=>'Prepare','description'=>'Make sure you have your updated resume printed out and ready','image'=>'images/ItemDetails/careersdetail2.png', ''],
-                  ['item_web_id'=>13,'name'=>'Interview','description'=>'Be punctual.','image'=>'images/ItemDetails/careersdetail3.png', ''],
-                  ['item_web_id'=>13,'name'=>'Get hired','description'=>'Once all of the pieces are in place, you’ll start training for your career with Dedicated People.','image'=>'images/ItemDetails/careersdetail4.png', ''],
+                  
        
         ];
+        
+        foreach ($types_elements as $types_element) {
+          DB::table('element_webs')->insert($types_element);
+        }
 
         foreach ($types_items as $types_item) {
           DB::table('type_item_webs')->insert($types_item);
         }
-        foreach ($types_items as $types_item) {
-          DB::table('type_item_webs')->insert($types_item);
-        }
+     
         foreach($sections as $section){
             DB::table('section_webs')->insert($section);
         }

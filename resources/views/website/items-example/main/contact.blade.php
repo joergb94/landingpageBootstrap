@@ -2,12 +2,7 @@
       <div class="col-sm-10 mx-auto d-block" data-aos="fade-up">
 
         <div class="section-title">
-          @if(isset($data->title))
-            <h2>{{$data->title}}</h2>
-          @endif
-          @if(isset($data->description))
-            <p>$data->description</p>
-          @endif
+          <h2>Contactanos</h2>
         </div>
 
         <div class="row">

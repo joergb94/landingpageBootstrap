@@ -17,9 +17,7 @@ use App\Http\Controllers\UserController;
 |
 */
 
-Route::get('/', function () {
-    return view('website.index');
-});
+Route::get('/', [WebSiteController::class, 'index']);
 
 Route::get('/contact', function () {
     return view('website.contactPrincipal');
@@ -36,7 +34,7 @@ Route::get('/careers/bz', function () {
 });
 
 
-Route::get('/site', [WebSiteController::class, 'index']);
+
 Route::post('/send', [WebSiteController::class, 'send_mail']);
 
 
