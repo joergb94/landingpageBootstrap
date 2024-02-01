@@ -21,7 +21,7 @@
                     target="_blank" style="color:#000;">Send Message <i style="font-size:13px;"
                       class="fab fa-whatsapp"></i></b></a></h5>
               </td>
-              <td class="btn-td">@include('Users.items.buttons', ['user' => $user])</td>
+              <td class="btn-td">@include('users.items.buttons', ['user' => $user])</td>
             </tr>
             @empty
             <tr id="table-row" class="text-center">

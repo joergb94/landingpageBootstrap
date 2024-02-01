@@ -1,17 +1,17 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="card" id="index_blade">
+<div class="" id="index_blade">
   <div class="card-body">
     <div class="row">
       <div class="col-sm-6">
         <h4 class="card-title mb-0">
-          Inicio  <i class='fa fa-home'></i>
+          edit-web  <i class='fa fa-home'></i>
         </h4>
       </div>
       <!--col-->
       <div class="col-sm-6">
-        @include('home.items.header-buttons')
+        @include('edit-web.items.header-buttons')
       </div>
       <!--col-->
     </div>
@@ -19,9 +19,9 @@
 
     </br>
     <div class="col-sm-12">
-      @include('home.items.search')
+      @include('edit-web.items.search')
     </div>
-    @include('home.items.table')
+    @include('edit-web.items.table')
     <div id="loading" style="display:none" class="col-sm-12 text-center">
       </br></br></br>
       <div class="col-sm-12">

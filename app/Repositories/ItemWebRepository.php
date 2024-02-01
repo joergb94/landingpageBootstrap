@@ -4,7 +4,7 @@ namespace App\Repositories;
 
 use App\Exceptions\GeneralException;
 use App\Models\Section;
-use App\Models\Item;
+use App\Models\ItemWeb;
 use App\Models\ItemWebDetail;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Support\Facades\DB;
@@ -27,29 +27,16 @@ class ItemWebRepository
     }
 
 
-    function getSearchPaginated($section,$criterion, $search, $status)
+    function getSearchPaginated($criterion, $search, $status)
     {
             
         $rg = (strlen($criterion) > 0 &&  strlen($search) > 0) 
-                     ? $this->model->where($criterion, 'like', '%'. $search . '%')->where('section_id',$section)
-                     : $this->model->where('section_id',$section);
-                
-               
-                
-                $Items = $rg->orderBy('id', 'asc')->paginate(10);
+                     ? $this->model->where($criterion, 'like', '%'. $search . '%')
+                     : $this->model->where('id','>',0);
 
-        return [
-                'pagination' => [
-                    'total'        => $Items->total(),
-                    'current_page' => $Items->currentPage(),
-                    'per_page'     => $Items->perPage(),
-                    'last_page'    => $Items->lastPage(),
-                    'from'         => $Items->firstItem(),
-                    'to'           => $Items->lastItem(),
-                ],
-                'Items' => $Items,
-                'Section'=>Section::find($section),
-            ];
+                $Items = $rg->with('type_item_web:id,name,is_main')->orderBy('id', 'asc')->paginate(10);
+
+        return  $Items;
     }
 
   

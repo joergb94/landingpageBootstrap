@@ -19,7 +19,7 @@ a {
 }
 
 a:hover {
-  color: #73c5eb;
+  color: #438E8E;
   text-decoration: none;
 }
 
@@ -111,13 +111,15 @@ h1, h2, h3, h4, h5, h6 {
 # Header
 --------------------------------------------------------------*/
 #header {
+  margin-top: 2%;
   transition: all 0.5s;
   z-index: 997;
   padding: 15px 0;
+  background-color: rgb(207, 201, 215,0.8); 
 }
 
 #header.header-scrolled, #header.header-inner-pages {
-  background: rgba(40, 58, 90, 0.9);
+  background-color: rgb(207, 201, 215,0.8); 
 }
 
 #header .logo {
@@ -135,7 +137,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #header .logo img {
-  max-height: 40px;
+  
 }
 
 /*--------------------------------------------------------------
@@ -165,9 +167,9 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
   justify-content: space-between;
   padding: 10px 0 10px 30px;
-  font-size: 15px;
+  font-size: 24px;
   font-weight: 500;
-  color: #fff;
+  color:  #4e2e85;
   white-space: nowrap;
   transition: 0.3s;
 }
@@ -179,7 +181,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .navbar a:hover, .navbar .active, .navbar .active:focus, .navbar li:hover > a {
-  color: #47b2e4;
+  color:  #4e2e85;
+  font-weight: bold;
 }
 
 .navbar .getstarted {

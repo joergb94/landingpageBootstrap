@@ -3,9 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\WebSiteController;
-use App\Http\Controllers\AdminSiteController;
-use App\Http\Controllers\AdminSiteDetailController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\editionSiteController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -63,19 +62,17 @@ Route::group(['middleware'=>['auth']], function(){
     Route::put('/users/{id}/pass', [UserController::class, 'updatePassword']);
     Route::delete('/users/{id}', [UserController::class, 'deleteOrResotore']);
 
-    //items
-    Route::get('/items', [AdminSiteController::class, 'index']);
-    Route::get('/items/{section}', [AdminSiteController::class, 'indexData']);
-    Route::post('/items/add', [AdminSiteController::class, 'store']);
-    Route::post('/items/update', [AdminSiteController::class, 'update']);
-    Route::post('/items/deleteOrResotore',[AdminSiteController::class, 'deleteOrResotore']);
 
-     //itemDeatils
-     Route::get('/itemDetails', [AdminSiteDetailController::class, 'index']);
-     Route::get('/itemDetails/{section}', [AdminSiteDetailController::class, 'indexData']);
-     Route::post('/itemDetails/add', [AdminSiteDetailController::class, 'store']);
-     Route::post('/itemDetails/update', [AdminSiteDetailController::class, 'update']);
-     Route::post('/itemDetails/deleteOrResotore',[AdminSiteDetailController::class, 'deleteOrResotore']);
+    Route::get('/edit-web', [editionSiteController::class, 'index']);
+    Route::get('/edit-web/create', [editionSiteController::class, 'create']);
+    Route::post('/edit-web/create', [editionSiteController::class, 'store']);
+    Route::get('/edit-web/{id}', [editionSiteController::class, 'detail']);
+    Route::get('/edit-web/{id}/edit', [editionSiteController::class, 'edit']);
+    Route::put('/edit-web/{id}', [editionSiteController::class, 'update']);
+    Route::get('/edit-web/{id}/editpass', [editionSiteController::class, 'editPassword']);
+    Route::put('/edit-web/{id}/pass', [editionSiteController::class, 'updatePassword']);
+    Route::delete('/edit-web/{id}', [editionSiteController::class, 'deleteOrResotore']);
+
 
 });
 

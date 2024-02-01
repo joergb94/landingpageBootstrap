@@ -4,40 +4,37 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Repositories\ItemWebRepository;
 
 class editionSiteController extends Controller
 {
        /**
      * CompanyController constructor.
      *
-     * @param UserRepository $UserRepository
+     * @param ItemWebRepository $ItemWebRepository
      */
-    public function __construct(UserRepository $UserRepository)
+    public function __construct(ItemWebRepository $ItemWebRepository)
     {   
         $this->menu_id = 2;
-        $this->UserRepository = $UserRepository;
+        $this->ItemWebRepository = $ItemWebRepository;
         $this->module_name ='User';
         $this->text_module = ['Created','Updated','Update Password','Deleted','Restored','Actived','Deactived'];
     }
 
 
-    public function index(UserRequest $request){
+    public function index(Request $request){
 
      
         
             $search = trim($request->search);
             $criterion = trim($request->criterion);
             $status = ($request->status)? $request->status : 1;
-            $profile = ($request->profilesearch)? $request->profilesearch : 'all';
-            $data = $this->UserRepository->getSearchPaginated($criterion,$search,$status, $profile);
-           
-            $typeU = Auth::user()->user_type_id == 1?UserType::all():UserType::whereIn('id',[3,5])->get();
-            
-            
+            $data = $this->ItemWebRepository->getSearchPaginated($criterion, $search, $status);
+  
             if ($request->ajax()) { 
-                return view('users.items.table',['data'=>$data,'dm'=>accesUrl(Auth::user(),$this->menu_id)]);
+                return view('edit-web.items.table',['data'=>$data,'dm'=>accesUrl(Auth::user(),$this->menu_id)]);
             }
-                return view('users.index',['data'=>$data,'dm'=>accesUrl(Auth::user(),$this->menu_id),'tu'=>$typeU]);
+                return view('edit-web.index',['data'=>$data,'dm'=>accesUrl(Auth::user(),$this->menu_id)]);
     }
 
 
@@ -54,8 +51,8 @@ class editionSiteController extends Controller
     public function detail(Request $request,$id)
     {   
         if ($request->ajax()) {
-            $data = $this->UserRepository->findById($id);
-            return view('users.detail',['data'=>$data]);
+            $data = $this->ItemWebRepository->findById($id);
+            return view('edit-web.detail',['data'=>$data]);
         }
     }
 
@@ -71,8 +68,8 @@ class editionSiteController extends Controller
     public function create(UserRequest $request)
     {   
         if ($request->ajax()) {
-            $data = $this->UserRepository->findDataToBlade();
-            return view('users.create',$data);
+            $data = $this->ItemWebRepository->findDataToBlade();
+            return view('edit-web.create',$data);
         }
     }
 
@@ -84,7 +81,7 @@ class editionSiteController extends Controller
     * @param location the location of the user
     */
     public function store(UserStoreRequest $request){
-        $data = $this->UserRepository->create($request->input());
+        $data = $this->ItemWebRepository->create($request->input());
 
         return response()->json(Answer( $data['id'],
                                         $this->module_name,
@@ -110,8 +107,8 @@ class editionSiteController extends Controller
     {   
         if ($request->ajax()) {
            
-            $data = $this->UserRepository->findDataToBlade($id);
-            return view('users.update',$data);
+            $data = $this->ItemWebRepository->findDataToBlade($id);
+            return view('edit-web.update',$data);
         }
     }
 
@@ -124,7 +121,7 @@ class editionSiteController extends Controller
     */
     public function update(UserUpdateRequest $request,$id){ 
 
-        $data = $this->UserRepository->update($id, $request->only(
+        $data = $this->ItemWebRepository->update($id, $request->only(
             'name',
             'type',
             'last_name',
@@ -153,9 +150,9 @@ class editionSiteController extends Controller
     {   
         if ($request->ajax()) {
            
-            $data = $this->UserRepository->findById($id);
+            $data = $this->ItemWebRepository->findById($id);
 
-            return view('users.password',['data'=>$data]);
+            return view('edit-web.password',['data'=>$data]);
         }
     }
 
@@ -168,7 +165,7 @@ class editionSiteController extends Controller
     */
     public function updatePassword(UserPassRequest $request,$id){ 
 
-        $data = $this->UserRepository->updatePass($id, $request->only(
+        $data = $this->ItemWebRepository->updatePass($id, $request->only(
                     'password',
                 ));
 
@@ -189,7 +186,7 @@ class editionSiteController extends Controller
      */
     public function change_status(UserIdRequest $request,$location,$id)
     {
-        return response()->json($this->UserRepository->updateStatus($request->id));
+        return response()->json($this->ItemWebRepository->updateStatus($request->id));
     } 
 
    /**
@@ -201,7 +198,7 @@ class editionSiteController extends Controller
     */
     public function deleteOrResotore(Request $request,$location,$id)
     {    
-        $state = $this->UserRepository->deleteOrResotore($id);
+        $state = $this->ItemWebRepository->deleteOrResotore($id);
         return response()->json(Answer( $id,
                                         $this->module_name,
                                         $this->text_module[$state],
