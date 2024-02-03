@@ -39,6 +39,19 @@ class ItemWebRepository
         return  $Items;
     }
 
+    public function findById(int $id):ItemWeb{
+        return $this->model->withTrashed()->with(['type_item_web','section_web','children'])->find($id);
+    }
+
+    public function findDataToBlade(int $id = null){
+        $data = []; 
+        if($id > 0){
+            $data['data']= $this->findById($id);
+        }
+
+        return $data;
+    }
+
   
   
     /**

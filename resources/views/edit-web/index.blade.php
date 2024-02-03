@@ -38,16 +38,13 @@
   <!--card-body-->
 </div>
 <!--card-->
-
+<div id="show_blade" style="display:none">
+  <div id="card_show"></div>
+</div>
 <!-- Passing BASE URL to AJAX -->
 <input id="url" type="hidden" value="{{ \Request::url() }}">
 <input id="baseUrl" type="hidden" value="{{ \Request::root() }}">
 @endsection
-@section('modal')
-<div id="show_blade" style="display:none">
-  <div id="card_show"></div>
-</div>
-@endsection
 @section('js')
-<!-- <script src="{{asset('back-office/js/actions/home.js')}}"></script>-->
+ <script src="{{asset('back-office/js/actions/EditionSite.js')}}"></script>
 @endsection

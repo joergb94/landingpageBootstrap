@@ -1,5 +1,5 @@
 <header id="header" style="background-image: url('../../media/examples/lizard.png');" class="fixed-top">
-    <div class="container d-flex ">
+  <div class="container d-flex align-items-center">
       <!-- Uncomment below if you prefer to use an image logo -->
       <a href="/" class="me-auto col-sm-3"><img src="{{asset('assets/img/logo.png')}}" alt="" class="img-fluid"></a>
 
