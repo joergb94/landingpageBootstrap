@@ -68,7 +68,7 @@ Route::group(['middleware'=>['auth']], function(){
     Route::post('/edit-web/create', [editionSiteController::class, 'store']);
     Route::get('/edit-web/{id}', [editionSiteController::class, 'detail']);
     Route::get('/edit-web/{id}/edit', [editionSiteController::class, 'edit']);
-    Route::put('/edit-web/{id}', [editionSiteController::class, 'update']);
+    Route::put('/edit-web/{id}/edit', [editionSiteController::class, 'update']);
     Route::get('/edit-web/{id}/editpass', [editionSiteController::class, 'editPassword']);
     Route::put('/edit-web/{id}/pass', [editionSiteController::class, 'updatePassword']);
     Route::delete('/edit-web/{id}', [editionSiteController::class, 'deleteOrResotore']);

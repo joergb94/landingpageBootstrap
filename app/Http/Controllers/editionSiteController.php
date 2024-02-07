@@ -8,7 +8,12 @@ use App\Repositories\ItemWebRepository;
 
 class editionSiteController extends Controller
 {
-       /**
+    private $menu_id;
+    private $module_name;
+    protected $ItemWebRepository;
+    protected $text_module;
+    
+    /**
      * CompanyController constructor.
      *
      * @param ItemWebRepository $ItemWebRepository
@@ -105,11 +110,10 @@ class editionSiteController extends Controller
     */
     public function edit(Request $request,$id)
     {   
-        if ($request->ajax()) {
-           
+    
             $data = $this->ItemWebRepository->findDataToBlade($id);
             return view('edit-web.update',$data);
-        }
+  
     }
 
        /**

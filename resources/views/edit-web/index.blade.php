@@ -46,5 +46,6 @@
 <input id="baseUrl" type="hidden" value="{{ \Request::root() }}">
 @endsection
 @section('js')
+<script src="{{asset('back-office/js/ckeditor.js')}}"></script>
  <script src="{{asset('back-office/js/actions/EditionSite.js')}}"></script>
 @endsection

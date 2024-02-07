@@ -14,7 +14,9 @@ use Illuminate\Support\Facades\Auth;
  * Class ItemRepository.
  */
 class ItemWebRepository
-{
+{   
+    protected $model;
+    protected $modelDetail;
     /**
      * ItemRepository constructor.
      *
@@ -46,9 +48,10 @@ class ItemWebRepository
     public function findDataToBlade(int $id = null){
         $data = []; 
         if($id > 0){
-            $data['data']= $this->findById($id);
+            $result = $this->findById($id)->mapped();
+            $data['data'] = (object) $result;
+            
         }
-
         return $data;
     }
 
