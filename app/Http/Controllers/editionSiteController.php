@@ -123,64 +123,12 @@ class editionSiteController extends Controller
     * @param location The location of the user
     * @param id The id of the user you want to update
     */
-    public function update(UserUpdateRequest $request,$id){ 
-
-        $data = $this->ItemWebRepository->update($id, $request->only(
-            'name',
-            'type',
-            'last_name',
-            'phone',
-            'email',
-            'locations',
-        ));
-        return response()->json(Answer( $data['id'],
-                                        $this->module_name,
-                                        $this->text_module[1],
-                                        "success",
-                                        'yellow',
-                                        '1'));
+    public function update(Request $request){ 
+      
+       dd($request->all());
     }
 
-  /**
-    * It returns a view with the data from the database
-    * 
-    * @param Request request The request object.
-    * @param location The location of the view file.
-    * @param id The id of the user you want to edit
-    * 
-    * @return The view is being returned.
-    */
-    public function editPassword(Request $request,$id)
-    {   
-        if ($request->ajax()) {
-           
-            $data = $this->ItemWebRepository->findById($id);
-
-            return view('edit-web.password',['data'=>$data]);
-        }
-    }
-
-   /**
-    * It updates the password of a user.
-    * 
-    * @param UserPassRequest request The request object.
-    * @param location the location of the user (admin, client, etc)
-    * @param id The id of the user you want to update
-    */
-    public function updatePassword(UserPassRequest $request,$id){ 
-
-        $data = $this->ItemWebRepository->updatePass($id, $request->only(
-                    'password',
-                ));
-
-        return response()->json(Answer( $data['id'],
-                                        $this->module_name,
-                                        $this->text_module[2],
-                                        "success",
-                                        'yellow',
-                                        '1'));
-    }
-
+ 
     /**
      * It takes a request, a location, and an id, and returns a json response
      * 
