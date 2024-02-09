@@ -3,10 +3,10 @@
 
         <div class="section-title">
           @if(isset($data->title))
-            <h2>{{$data->title}}</h2>
+            <h2>{!!$data->title!!}</h2>
           @endif
           @if(isset($data->description))
-            <p>$data->description</p>
+            <p>{!!$data->descriptio!!}</p>
           @endif
         </div>
 

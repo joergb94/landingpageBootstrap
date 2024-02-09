@@ -1,11 +1,11 @@
 <section id="why-us" class="why-us section-bg" style="background-image:url('{{asset('assets/img/background/3.png')}}'); background-repeat: no-repeat; background-size:cover; background-size: 100% 100%;">
       <div class="section-title container">
           @if(isset($data->title))
-            <h2>{{$data->title}}</h2>
+            <h2>{!!$data->title!!}</h2>
           @endif
 
           @if(isset($data->footer))
-            <h4>{{$data->footer}}</h4>
+            <h4>{!!$data->footer!!}</h4>
           @endif
         </div>
       <div class="container-fluid" data-aos="fade-up">
@@ -18,19 +18,19 @@
                 @foreach ($data->children as $index => $item)
                   @if($index == 0)
                     <li>
-                      <a data-bs-toggle="collapse" class="collapse" data-bs-target="#accordion-list-1"><h4>{{$item->name}} </h4><i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                      <a data-bs-toggle="collapse" class="collapse" data-bs-target="#accordion-list-1"><h4>{!!$item->name!!} </h4><i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
                       <div id="accordion-list-1" class="collapse show" data-bs-parent=".accordion-list">
                         <h4 class="mt-5">
-                          {{$item->description}}
+                          {!!$item->description!!}
                         </h4>
                       </div>
                     </li>
                   @else
                     <li>
-                      <a data-bs-toggle="collapse" data-bs-target="#accordion-list-2" class="collapsed"><h4>{{$item->name}}</h4> <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                      <a data-bs-toggle="collapse" data-bs-target="#accordion-list-2" class="collapsed"><h4>{!!$item->name!!}</h4> <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
                       <div id="accordion-list-2" class="collapse" data-bs-parent=".accordion-list">
                         <h4>
-                        {{$item->description}}
+                        {!!$item->description!!}
                         </h4>
                       </div>
                     </li>

@@ -42,22 +42,20 @@
   <form id="edit-site-form">
       <div class="row">
         <div class="col-sm-6">
-            <div class="card mt-2">
-              <div class="card-header"><h4>Texto Principal</h4></div>
+            <button class="btn btn-secondary btn-block mt-2" type="button" onclick="editItemweb.show_form('general')"><h4>Informacion Principal</h4></button>
+            <div id="general" class="card mt-2" style="display:none">
+              <div class="card-header" ><h4>Texto Principal</h4></div>
               <div id="title-editor" class="card-body"><div id="title-{{$data->id}}" class="editor" >{!! $data->title !!}</div></div>
               <div class="card-header"><h4>Texto secundario</h4></div>
               <div id="footer-editor" class="card-body"><div id="footer-{{$data->id}}" class="editor">{!! $data->footer !!}</div></div>
             </div>
         </div>
         <div class="col-sm-6">
-          <div class="card mt-2">
+        <button class="btn btn-secondary btn-block mt-2" type="button" onclick="editItemweb.show_form('detail')"><h4>Informacion  Adicional</h4></button>
+          <div id="detail" class="card mt-2" style="display:none">
             @foreach ($data->children as $index => $item)
-            <div class="card-header">
-              <h4>{{$item->element_web['name']}}</h4>
-              <input id="{{$item->element_web['name']}}-image-{{$item->id}}" type="hidden" value="item->element_web['id']">
-            </div>
-         
-            <div id="detail-{{$item->id}}" class="card-body">
+            <button class="btn btn-secondary btn-block mt-2" type="button" onclick="editItemweb.show_form('detail-{{$item->id}}')"><h4>{{$item->element_web['name']}} {!! $item->name !!}</h4></button>
+            <div id="detail-{{$item->id}}" class="card-body" style="display:none">
                 @if( $item->element_web['name'] == 'button')
                   <div class="form-group mt-2">
                     <label for="sel1">Texto principal:</label>
@@ -216,6 +214,9 @@ const editItemweb = {
       }
     });
     
+  },
+  show_form: function(name){
+    $("#"+name).toggle();
   },
   back: function () {
 

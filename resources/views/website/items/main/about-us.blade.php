@@ -5,15 +5,15 @@
 
         <div class="section-title pb-5">
           @if(isset($data->title))
-            <h2>{{$data->title}}</h2>
+            <h2>{!!$data->title!!}</h2>
           @endif
 
           @if(isset($data->description))
-            <h3 class="pb-3"><strong>{{$data->footer}}</strong></h3>
+            <h3 class="pb-3"><strong>{!!$data->footer!!}</strong></h3>
           @endif
           
           @if(isset($data->children[0]))
-            <h4>{{$data->children[0]->description}}</h4>
+            <h4>{!!$data->children[0]->description!!}</h4>
           @endif
         </div>
 
@@ -29,8 +29,8 @@
                                 <img src="{{asset('assets/img/icons/vision.png')}}" class="img-fluid mx-auto d-block">
                               </div>
                               <div class="col-sm-8 text-center">
-                                <h3>{{$item->name}}</h3>
-                                <h4>{{$item->description}}</h4>
+                                <h3>{!!$item->name!!}</h3>
+                                <h4>{!!$item->description!!}</h4>
                               </div>
                             </div>
                           
@@ -56,8 +56,8 @@
                             <img src="{{asset('assets/img/icons/mission.png')}}" class="img-fluid mx-auto d-block">
                           </div>
                           <div class="col-sm-8 text-center">
-                              <h3>{{$item->name}}</h3>
-                              <h4>{{$item->description}}</h4>
+                              <h3>{!!$item->name!!}</h3>
+                              <h4>{!!$item->description!!}</h4>
                           </div>
                         </div>
                       
