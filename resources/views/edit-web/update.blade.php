@@ -188,6 +188,10 @@ function saveAllEditorContent(item = {title:'',footer:'', children:[]}) {
     return data;
 
 }
+function returnsubmod(data) {
+  messages(data);
+  window.location.href = url;
+}
 
 
 //section for const js 
