@@ -41,18 +41,12 @@
  <div class="col-sm-12">
   <form id="edit-site-form">
       <div class="row">
-        <div class="col-sm-12 d-flex justify-content-end">
-
-          <button class="btn btn-success" type="button" onclick="editItemweb.save('{{$data->id}}')">Aplicar cambios</button>
-          <button class="btn btn-warning" type="button" onclick="getAllEditorContent()">Mostrar cambios</button>
-
-        </div>
         <div class="col-sm-6">
             <div class="card mt-2">
               <div class="card-header"><h4>Texto Principal</h4></div>
-              <div id="title-editor" class="card-body"><div id="title-{{$data->id}}" class="editor" >{{$data->title}}</div></div>
+              <div id="title-editor" class="card-body"><div id="title-{{$data->id}}" class="editor" >{!! $data->title !!}</div></div>
               <div class="card-header"><h4>Texto secundario</h4></div>
-              <div id="footer-editor" class="card-body"><div id="footer-{{$data->id}}" class="editor">{{$data->footer}}</div></div>
+              <div id="footer-editor" class="card-body"><div id="footer-{{$data->id}}" class="editor">{!! $data->footer !!}</div></div>
             </div>
         </div>
         <div class="col-sm-6">
@@ -62,31 +56,45 @@
               <h4>{{$item->element_web['name']}}</h4>
               <input id="{{$item->element_web['name']}}-image-{{$item->id}}" type="hidden" value="item->element_web['id']">
             </div>
+         
             <div id="detail-{{$item->id}}" class="card-body">
-              <div class="form-group mt-2">
-                <label for="sel1">Texto principal:</label>
-                <textarea id="{{$item->element_web['name']}}-name-{{$item->id}}" class="editor">{{$item->name}}</textarea>
-              </div>
-              <div class="form-group mt-2">
-                <label for="sel1">Texto secundario:</label>
-                <textarea id="{{$item->element_web['name']}}-description-{{$item->id}}" class="editor">{{$item->description}}</textarea>
-              </div>
-              <div class="form-group mt-2">
-              <label for="sel1">Imagen:</label>
-              <input type="file" id="{{$item->element_web['name']}}-image-{{$item->id}}" class="form-control-file col-sm-12 border">
-              </div>
+                @if( $item->element_web['name'] == 'button')
+                  <div class="form-group mt-2">
+                    <label for="sel1">Texto principal:</label>
+                    <textarea id="{{$item->element_web['name']}}-description-{{$item->id}}" class="editor">{!! $item->description !!}</textarea>
+                  </div>
+                @else
+                  <div class="form-group mt-2">
+                    <label for="sel1">Texto principal:</label>
+                    <textarea id="{{$item->element_web['name']}}-name-{{$item->id}}" class="editor">{!! $item->name !!}</textarea>
+                  </div>
+                  <div class="form-group mt-2">
+                    <label for="sel1">Texto secundario:</label>
+                    <textarea id="{{$item->element_web['name']}}-description-{{$item->id}}" class="editor">{!! $item->description !!}</textarea>
+                  </div>
+                  <div class="form-group mt-2">
+                    <label for="sel1">Imagen:</label>
+                    <input type="file" id="{{$item->element_web['name']}}-image-{{$item->id}}" class="form-control-file col-sm-12 border">
+                  </div>
+                @endif
             </div>
             @endforeach
+          </div>
         </div>
+        <div class="col-sm-12 d-flex justify-content-end">
+          <button class="btn btn-success" type="button" onclick="editItemweb.save({{ json_encode($data) }})">Aplicar cambios</button>
         </div>
       </div>
   </form>
-  </div>
-  @if($data->type_item_web['is_main'])
+ </div>
+ <div id="component">
+ @if($data->type_item_web['is_main'])
          <main id="main"> @include('website.items.main.'.$data->type_item_web->name,['data' =>  $data]) </main>
   @else
          @include('website.items.'.$data->type_item_web->name,['data' =>  $data])
   @endif
+ </div>
+
   <div id="preloader"></div>
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
   <input id="url" type="hidden" value="{{ \Request::url() }}">
@@ -103,6 +111,7 @@
   <script src="{{ asset('back-office/vendor/jquery-3.2.1.min.js') }}"></script>
   <script src="{{asset('assets/js/main.js')}}"></script>
   <script src="{{asset('back-office/js/sweetalert2@9.js')}}"></script>
+  <script src="{{asset('back-office/js/bootstrap-notify.js')}}"></script>
   <script src="{{asset('back-office/js/ckeditor.js')}}"></script>
   <script src="{{ asset('back-office/js/MasterAjax.js') }}"></script>
 
@@ -144,38 +153,46 @@ function getAllEditorContent() {
     });
 }
 
-function saveAllEditorContent() {
-  const data = {
-          title:'',
-          footer:'',
-        };
-        const child =[];
-  editorInstances.forEach(editorData => {
-        const content = editorData.editor.getData();
-        var plainTextContent ='';
-        const collection = document.getElementsByClassName(editorData.id);
-        
-        if(editorData.id.toLowerCase().includes("button")){
-           plainTextContent= content.replace(/<p>|<\/p>|<h1>|<\/h1>|<h2>|<\/h2>|<h3>|<\/h3>/g, '');
-           child.push(plainTextContent);
+function saveAllEditorContent(item = {title:'',footer:'', children:[]}) {
+  const data = item;
+  const titleEditor = editorInstances.find(obj => obj.id === 'title-'+item.id);
+  const footerEditor = editorInstances.find(obj => obj.id === 'footer-'+item.id);
 
-        }else if(editorData.id.toLowerCase().includes("title")){
-          data.title = content;
-        }
-        else if(editorData.id.toLowerCase().includes("footer")){
-          data.footer = content;
+  const title = titleEditor.editor.getData();
+  const footer = footerEditor.editor.getData();
+
+  data.title = title;
+  data.footer = footer;
+
+  data.children.forEach(child => {
+        if(child.element_web.name == 'button'){
+
+          const editorDescription = editorInstances.find(obj => obj.id === child.element_web.name+'-description-'+child.id);
+          const description = editorDescription.editor.getData();
+          var cleanDescription = description.replace(/<p>|<\/p>|<h1>|<\/h1>|<h2>|<\/h2>|<h3>|<\/h3>/g, '');
+          child.description = cleanDescription;
+
         }else{
-          plainTextContent = content;
-          child.push(plainTextContent);
+          const editorName = editorInstances.find(obj => obj.id === child.element_web.name+'-name-'+child.id);
+          const editorDescription = editorInstances.find(obj => obj.id === child.element_web.name+'-description-'+child.id);
+
+          const name = editorName.editor.getData();
+          const description = editorDescription.editor.getData();
+
+
+          child.name = name;
+          child.description = description;
         }
-    });
-    return {item:data,children:child};
+  });
+    console.log(data);
+    return data;
 
 }
 
+
 //section for const js 
 const editItemweb = {
-  save: function (id = '') {
+  save: function (item = '') {
 
     Swal.fire({
       title: "Desea aplicarlos cambios en el contenido?",
@@ -188,12 +205,10 @@ const editItemweb = {
       cancelButtonText: 'Continuar editando!'
     }).then((result) => {
       if (result.value) {
-        var form =  saveAllEditorContent();
-        console.log(form)
+        var form =  saveAllEditorContent(item);
         var my_url = url;
         var type = "PUT";
-
-        actions.save(type, my_url, 'update', form);
+        var result =  actions.save(type, my_url, 'update', form, 'submod');
       }
     });
     

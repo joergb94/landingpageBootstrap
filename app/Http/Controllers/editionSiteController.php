@@ -125,7 +125,13 @@ class editionSiteController extends Controller
     */
     public function update(Request $request){ 
       
-       dd($request->all());
+       $data = $this->ItemWebRepository->update($request->input());
+       return response()->json(Answer( $data['id'],
+       $this->module_name,
+       $this->text_module[0],
+       "success",
+       'green',
+       '1'));
     }
 
  

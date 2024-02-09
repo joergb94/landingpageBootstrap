@@ -94,24 +94,38 @@ class ItemWebRepository
      * @throws \Throwable
      * @return Item
      */
-    public function update($Item_id, array $data): Item
+    public function update(array $data): ItemWeb
     {
        
-        $Item = $this->model->find($Item_id);
+        $itemWeb = ItemWeb::findOrFail($data['id']);
         
-        return DB::transaction(function () use ($Item, $data) {
-            if ($Item->update([
-                'section_id' => $data['section_id'],
+        return DB::transaction(function () use ($itemWeb, $data) {
+
+
+            if($itemWeb->update([
                 'title' => $data['title'],
-                'element' =>$data['element'],
-                'image'=>$data['image'],
-                'description' => $data['description'],
-                'footer' =>$data['footer']
-            ])) {
-
-                return $Item;
+                'footer' => $data['footer'],
+                'image' => $data['image'],
+                'section_web_id' => $data['section_web_id'],
+                'type_item_web_id' => $data['type_item_web_id'],
+            ])){
+                // Assuming 'children' is a relationship, you would handle it like this
+                $itemWeb->children()->delete(); // Delete existing children
+                // Create new children without 'element_web' and 'item_web'
+                $cleanedChildren = [];
+                foreach ($data['children'] as $child) {
+                    // Remove 'element_web' and 'item_web' from each child data
+                    unset($child['id']);
+                    unset($child['element_web']);
+                    unset($child['item_web']);
+                    $cleanedChildren[] = $child;
+                }
+                $itemWeb->children()->createMany($cleanedChildren);
+                if($itemWeb){
+                    return $itemWeb;
+                }
+             
             }
-
             throw new GeneralException(__('There was an error updating the Item.'));
         });
     }

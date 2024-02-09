@@ -24,6 +24,15 @@ $(document).ready(function () {
   
 });
 
+function returnsubmod(data) {
+  messages(data);
+  $("#index_blade2").show();
+  $("#show_blade2").hide();
+  $("#FormModalSN").modal('hide');
+  $("#FormModalCSN").modal('hide');
+}
+
+
 const actions = {
   save: function (type, my_url, state, form, actions = '', view = '') {
     var st = state;
@@ -86,7 +95,6 @@ const actions = {
           dataType: 'json',
           success: function (data) {
             $('.btn-save').prop("disabled", false);
-            console.log('Error:', data);
             //messages(data);
             returnsubmod(data);
           },
