@@ -168,6 +168,7 @@ function saveAllEditorContent(item = {title:'',footer:'', children:[]}) {
           const editorDescription = editorInstances.find(obj => obj.id === child.element_web.name+'-description-'+child.id);
           const description = editorDescription.editor.getData();
           var cleanDescription = description.replace(/<p>|<\/p>|<h1>|<\/h1>|<h2>|<\/h2>|<h3>|<\/h3>/g, '');
+          child.name = cleanDescription;
           child.description = cleanDescription;
 
         }else{
