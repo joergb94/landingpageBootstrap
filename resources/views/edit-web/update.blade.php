@@ -102,7 +102,7 @@
   <script src="{{asset('back-office/js/bootstrap-notify.js')}}"></script>
   <script src="{{asset('back-office/js/ckeditor.js')}}"></script>
   <script src="{{ asset('back-office/js/MasterAjax.js') }}"></script>
-  <script src="{{ asset('back-office/js/EditionItemWebSite.js') }}"></script>
+  <script src="{{ asset('back-office/js/actions/EditionItemWebSite.js') }}"></script>
 
 </body>
 
