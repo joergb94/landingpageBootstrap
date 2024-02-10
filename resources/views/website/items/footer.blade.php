@@ -18,8 +18,8 @@
       <div class="col-lg-3 col-md-6 footer-links">
         <h4>Useful Links</h4>
         <ul>
-          <li><i class="bx bx-phone"></i> <a href="#">Home</a></li>
-          <li><i class="bx bx-map"></i> <a href="#">About us</a></li>
+          <li><i class="bx bx-phone"></i> <a href="#">(999) 999 9999</a></li>
+          <li><i class="bx bx-map"></i> <a href="#"></a></li>
         </ul>
       </div>
 

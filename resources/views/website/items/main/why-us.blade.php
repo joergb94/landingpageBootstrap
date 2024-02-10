@@ -1,18 +1,18 @@
-<section id="why-us" class="why-us section-bg" style="background-image:url('{{asset('assets/img/background/3.png')}}'); background-repeat: no-repeat; background-size:cover; background-size: 100% 100%;">
+<section id="why-us" class="why-us bg-purple">
       <div class="section-title container">
           @if(isset($data->title))
-            <h2>{!!$data->title!!}</h2>
+            <h2 class="text-white-f">{!!$data->title!!}</h2>
           @endif
 
           @if(isset($data->footer))
-            <h4>{!!$data->footer!!}</h4>
+            <h4 class="text-white-f">{!!$data->footer!!}</h4>
           @endif
         </div>
       <div class="container-fluid" data-aos="fade-up">
 
         <div class="row">
 
-          <div class="col-sm-8 d-flex flex-column justify-content-center align-items-stretch  order-2 order-lg-1">
+          <div class="col-sm-7 d-flex flex-column justify-content-center align-items-stretch  order-2 order-lg-1">
             <div class="accordion-list">
               <ul>
                 @foreach ($data->children as $index => $item)
@@ -41,7 +41,7 @@
 
           </div>
 
-          <div class="col-sm-4 align-items-stretch order-1 order-lg-2 img" style='background-image: url("{{asset('assets/img/icons/objectives.png')}}");' data-aos="zoom-in" data-aos-delay="150">&nbsp;</div>
+          <div class="col-sm-5 align-items-stretch order-1 order-lg-2 img" style='background-image: url("{{asset('assets/img/icons/objectives.png')}}");' data-aos="zoom-in" data-aos-delay="150">&nbsp;</div>
         </div>
 
       </div>
