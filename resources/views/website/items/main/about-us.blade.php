@@ -12,7 +12,7 @@
           </div>
 
           @if(isset($data->footer))
-            <h3 class="pb-3 text-white-f"><strong>{!!$data->footer!!}</strong></h3>
+            <h3 class="pb-3 text-white-f">{!!$data->footer!!}</h3>
           @endif
           
           @if(isset($data->children[0]))
