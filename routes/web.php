@@ -5,6 +5,8 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\WebSiteController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\editionSiteController;
+use App\Http\Controllers\InboxController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -73,7 +75,9 @@ Route::group(['middleware'=>['auth']], function(){
     Route::put('/edit-web/{id}/pass', [editionSiteController::class, 'updatePassword']);
     Route::delete('/edit-web/{id}', [editionSiteController::class, 'deleteOrResotore']);
 
-
+    Route::get('/inboxes', [InboxController::class, 'index']);
+    Route::get('/inboxes/{id}', [InboxController::class, 'detail']);
+    Route::delete('/inboxes/{id}', [InboxController::class, 'deleteOrResotore']);
 });
 
 });

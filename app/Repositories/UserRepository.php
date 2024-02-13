@@ -14,7 +14,8 @@ use Illuminate\Support\Facades\Auth;
  * Class UserRepository.
  */
 class UserRepository
-{
+{   
+    protected $model;
     /**
      * UserRepository constructor.
      *
@@ -89,8 +90,10 @@ class UserRepository
     {
         return DB::transaction(function () use ($data) {
             $User = $this->model::create([
-                'use_type_id'=>$data['type'],
+                'user_type_id'=>$data['type'],
                 'name' => $data['name'],
+                'last_name' => $data['last_name'],
+                'phone' => $data['phone'],
                 'email' => $data['email'],
                 'password' =>Hash::make($data['password']),
             ]);

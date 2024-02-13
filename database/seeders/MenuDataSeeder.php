@@ -18,7 +18,7 @@ class MenuDataSeeder extends Seeder
             ['name'=> 'Inicio','icon'=> 'fa fa-home','link'=>'/home','priority'=> '3','active'=> 1,],
             ['name'=> 'Usuarios','icon'=> 'fa fa-user','link'=>'/users','priority'=> '3','active'=> 1,],
             ['name'=> 'Edicion de sitio','icon'=> 'fa fa-gears','link'=>'/edit-web','priority'=> '3','active'=> 1,],
-            ['name'=> 'Correos recibidos','icon'=> 'fa fa-inbox','link'=>'/inbox','priority'=> '3','active'=> 1,],
+            ['name'=> 'Correos recibidos','icon'=> 'fa fa-inbox','link'=>'/inboxes','priority'=> '3','active'=> 1,],
       ];
       
       foreach($menus as $menu){

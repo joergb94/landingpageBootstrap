@@ -6,12 +6,12 @@
     <div class="row">
       <div class="col-sm-6">
         <h4 class="card-title mb-0">
-          Inicio  <i class='fa fa-home'></i>
+          Inicio  <i class='fa fa-inbox'></i>
         </h4>
       </div>
       <!--col-->
       <div class="col-sm-6">
-        @include('home.items.header-buttons')
+        @include('inbox.items.header-buttons')
       </div>
       <!--col-->
     </div>
@@ -19,9 +19,9 @@
 
     </br>
     <div class="col-sm-12">
-      @include('home.items.search')
+      @include('inbox.items.search')
     </div>
-    @include('home.items.table')
+    @include('inbox.items.table')
     <div id="loading" style="display:none" class="col-sm-12 text-center">
       </br></br></br>
       <div class="col-sm-12">
@@ -49,5 +49,5 @@
 </div>
 @endsection
 @section('js')
-<!-- <script src="{{asset('back-office/js/actions/home.js')}}"></script>-->
+<script src="{{asset('back-office/js/actions/Inbox.js')}}"></script>-->
 @endsection

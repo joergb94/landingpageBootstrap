@@ -2,11 +2,9 @@
   <div class="header-mobile__bar">
     <div class="container-fluid">
       <div class="header-mobile-inner">
-        <a class="btn btn-warning btn-sm col-2" href="/scan">
-         <i class="fa fa-camera"></i>
-        </a>
-        <a class="logo col-7" href="/home">
-          <img class="img-fluid" style="height:8vh;" src="{{asset('images/icon/logoDP.png') }}" />
+
+        <a class="logo col-" href="/home">
+          <img class="img-fluid" style="height:8vh;" src="{{asset('back-office/images/icon/logo.png') }}" />
         </a>
         <button class="hamburger hamburger--slider col-3" type="button">
           <span class="hamburger-box">
@@ -19,30 +17,32 @@
   <nav class="navbar-mobile">
     <div class="container-fluid">
     </div>
-    <div class="bg-white text-center">
-      <button type="button" class="btn btn-primary" id="logoutUsM" onclick="logoutMobile()">
-        <i class="zmdi zmdi-power"></i>{{ __(' Logout') }}
-      </button>
-      <form id="logout-form-dM" action="{{ route('logout') }}" method="POST" style="display: none;">
-        @csrf
-      </form>
-    </div>
+    
     <ul class="navbar-mobile__list list-unstyled">
       <li class="has-sub" id="menuDadM">
       <ul id="menuSonM" class='list-unstyled navbar__sub-list js-sub-list'>
-        @forelse($dm['data_menu'] as $menu)
-        <li id="menuM{{$menu->id}}" style="margin-left:5px;">
-          <a href="{{$menu->link}}">
-            <i class="{{$menu->icon}}"></i>{{$menu->name}}</a>
-        </li>
-        @empty
+      @forelse($dm['data_menu'] as $menu)
+                <li id="menu{{$menu['menu_data']->id}}">
+                  <a href="/adminFlex{{$menu['menu_data']->link}}">
+                    <i class="{{$menu['menu_data']->icon}} ml-2"></i>{{$menu['menu_data']->name}}</a>
+                </li>
+            @empty
         <li>
           Sin Accessos
         </li>
         @endforelse
       </ul>
       </li>
-
+      <li>
+        <div class="bg-white text-center mt-2">
+          <button type="button" class="btn btn-primary" id="logoutUsM" onclick="logoutMobile()">
+            <i class="zmdi zmdi-power"></i>{{ __(' Logout') }}
+          </button>
+          <form id="logout-form-dM" action="{{ route('logout') }}" method="POST" style="display: none;">
+            @csrf
+          </form>
+        </div>
+      </li>
     </ul>
     </li>
     </ul>

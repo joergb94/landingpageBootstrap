@@ -17,7 +17,11 @@ use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
-      /**
+    public $module_name;
+    public $text_module;
+    protected $menu_id;
+    protected $UserRepository;
+    /**
      * CompanyController constructor.
      *
      * @param UserRepository $UserRepository
@@ -94,6 +98,7 @@ class UserController extends Controller
     * @param location the location of the user
     */
     public function store(UserStoreRequest $request){
+        
         $data = $this->UserRepository->create($request->input());
 
         return response()->json(Answer( $data['id'],
@@ -178,7 +183,7 @@ class UserController extends Controller
     */
     public function updatePassword(UserPassRequest $request,$id){ 
 
-        $data = $this->UserRepository->updatePass($id, $request->only(
+        $data = $this->UserRepository->update_password($id, $request->only(
                     'password',
                 ));
 
