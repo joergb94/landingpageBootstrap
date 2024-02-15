@@ -14,9 +14,8 @@
 
           <div class="col-lg-5 d-flex align-items-stretch">
             <div class="info" >
-              <iframe class="map-contact" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621" frameborder="0"  allowfullscreen></iframe>
+              <iframe class="map-contact" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3723.8183120847875!2d-89.67376332400124!3d21.039954587392533!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f5674fca0555555%3A0xfbbc8fbfb1a39837!2sFraccionamiento%20Real%20Montejo!5e0!3m2!1ses!2smx!4v1707963737776!5m2!1ses!2smx" frameborder="0"  loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
             </div>
-
           </div>
 
           <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">

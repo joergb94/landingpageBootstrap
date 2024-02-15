@@ -1766,8 +1766,8 @@ section {
 #footer .footer-top .social-links a {
   font-size: 18px;
   display: inline-block;
-  background: #438E8E;
-  color: #fff;
+  background: #fdfdfd;
+  color: #080808;
   line-height: 1;
   padding: 8px 0;
   margin-right: 4px;
@@ -1779,7 +1779,7 @@ section {
 }
 
 #footer .footer-top .social-links a:hover {
-  background: #209dd8;
+  background: #438E8E;
   color: #fff;
   text-decoration: none;
 }
@@ -1873,4 +1873,25 @@ section {
 
 .text-services-dark{
   color: black !important;
+}
+
+.text-about-us-green{
+  color: #438E8E !important;
+}
+.rounded-item {
+  border-radius: 50%;
+  font-size: 18px;
+  display: inline-block;
+  line-height: 1;
+  padding: 8px 0;
+  margin-right: 4px;
+  border-radius: 50%;
+  text-align: center;
+  width: 36px;
+  height: 36px;
+  transition: 0.3s;
+}
+
+.btn-slide-about-us{
+  margin-top: 150px; width:50px; height:50px; color:white; background-color:#000000;
 }

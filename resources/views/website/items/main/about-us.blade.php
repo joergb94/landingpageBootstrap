@@ -16,7 +16,7 @@
           @endif
           
           @if(isset($data->children[0]))
-            <h4 class ="text-white-f">{!!$data->children[0]->description!!}</h4>
+            <h4 class ="text-about-us-green">{!!$data->children[0]->description!!}</h4>
           @endif
         </div>              
   </div>
@@ -36,20 +36,20 @@
               @if($index == 2)
                   <div id="div1" class="col-sm-10" data-aos="zoom-in" data-aos-delay="100">
                   <div class="row justify-content-center">
-                    <div class="icon-box col-sm-8" style="color:white; background-color:#514e79;">
+                    <div class="icon-box col-sm-8 bg-white">
                             <div class="row">
                               <div class="col-sm-4">
                                 <img src="{{asset('assets/img/icons/vision.png')}}" class="img-fluid mx-auto d-block">
                               </div>
                               <div class="col-sm-8 text-center">
-                                <h3>{!!$item->name!!}</h3>
-                                <h4>{!!$item->description!!}</h4>
+                                {!!$item->name!!}
+                                {!!$item->description!!}
                               </div>
                             </div>
                           
                         </div>
                       <div class="col-sm-1 justify-content-center">
-                        <button class="btn btn-primary rounded-circle" onclick="toggleDiv()" style="margin-top: 150px; width:50px; height:50px; color:white; background-color:#3D3868;" > 
+                        <button class="btn btn-slide-about-us rounded-circle" onclick="toggleDiv()" > 
                           <div class="icon"><i class="bi bi-caret-right-fill"></i> </div>
                         </button>
                       </div>
@@ -59,18 +59,18 @@
                 <div id="div2" class="col-sm-10 hidden" data-aos="zoom-in" data-aos-delay="100">
                 <div class="row justify-content-center">
                     <div class="col-sm-1 justify-content-center">
-                      <button class="btn btn-primary rounded-circle" onclick="toggleDiv()" style="margin-top: 150px; width:50px; height:50px; color:white; background-color:#3D3868;" > 
+                      <button class="btn btn-slide-about-us rounded-circle" onclick="toggleDiv()" > 
                         <div class="icon"><i class="bi bi-caret-left-fill"></i> </div>
                       </button>
                     </div>
-                    <div class="icon-box col-sm-8 " style="color:white; background-color:#514e79;">
+                    <div class="icon-box col-sm-8 bg-white">
                         <div class="row">
                           <div class="col-sm-4">
                             <img src="{{asset('assets/img/icons/mission.png')}}" class="img-fluid mx-auto d-block">
                           </div>
                           <div class="col-sm-8 text-center">
-                              <h3>{!!$item->name!!}</h3>
-                              <h4>{!!$item->description!!}</h4>
+                              {!!$item->name!!}
+                              {!!$item->description!!}
                           </div>
                         </div>
                       
