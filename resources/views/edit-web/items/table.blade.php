@@ -5,9 +5,9 @@
               <div class="card text-center rounded-border">
                 <div class="col-sm-12 preview-edition">
                     @if($item->type_item_web->is_main)
-                        @include('website.items-example.main.'.$item->type_item_web->name)
+                        @include('website.items-example.main.'.$item->type_item_web->name, ['data' => $item])
                     @else
-                        @include('website.items-example.'.$item->type_item_web->name)
+                        @include('website.items-example.'.$item->type_item_web->name, ['data' => $item])
                     @endif
                 </div>
 

@@ -21,7 +21,7 @@
         </div>              
   </div>
 </div>
-  <section id="about" class="services section-bg" >
+  <section id="about" class="services bg-section-light-betta" >
     <div class="row">
       <div class="col-sm-12 mx-auto pb-3 text-center">
             @if(isset($data->children[1]))

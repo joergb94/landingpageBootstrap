@@ -1,4 +1,4 @@
-<section id="services" class="services section-bg">
+<section id="services" class="services bg-section-light-betta">
       <div class="col-sm-10 mx-auto d-block" data-aos="fade-up">
 
         <div class="section-title">
