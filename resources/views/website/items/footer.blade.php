@@ -13,22 +13,26 @@
       <div class="col-md-3 footer-links">
         <ul>
           <li>
-            <div class="row">
-              <div class="col-2">
-                <span class="badge badge-pill bg-white rounded-item"><i class="bx bx-phone"></i></span>
-              </div>
-              <div class="col-10">
-                <h6 class="ml-1 mt-1">(999) 999 9999</h6>
+            <div class="col-sm-12">
+              <div class="row">
+                <div class="col-2">
+                  <span class="badge badge-pill bg-white rounded-item"><i class="bx bx-phone"></i></span>
+                </div>
+                <div class="col-10">
+                  <h6 class="ml-1 mt-1"><a class="text-white" href="#">(999) 999 9999.</a></h6>
+                </div>
               </div>
             </div>
           </li>
           <li>
-            <div class="row">
-              <div class="col-2">
-                <span class="badge badge-pill bg-white rounded-item"><i class="bx bx-map"></i></span>
-              </div>
-              <div class="col-10">
-                <h6 class="ml-1 mt-1"><a class="text-white" href="#">Fracc. Real Montejo, C.P. 97345,Dzitya ,Yucatán, México.</a></h6>
+           <div class="col-sm-12">
+              <div class="row">
+                <div class="col-2">
+                  <span class="badge badge-pill bg-white rounded-item"><i class="bx bx-map"></i></span>
+                </div>
+                <div class="col-10">
+                  <h6 class="ml-1 mt-1"><a class="text-white" href="#">Fracc. Real Montejo, C.P. 97345,Dzitya ,Yucatán, México.</a></h6>
+                </div>
               </div>
             </div>
           </li>
