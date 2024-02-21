@@ -1,6 +1,6 @@
 
   <div class="col-sm-12 mt-2 rounded-border preview-background-edition">
-    <div class="col-sm-12 bg-dark  rounded-border">
+    <div class="col-sm-12 bg-dark  rounded-border mt-5">
       <div class="row">
 
         <div class="col-lg-6 col-md-6 footer-contact">

@@ -1689,17 +1689,20 @@ section {
   background: #209dd8;
 }
 
-#footer .footer-top {
+
+
+.footer-top {
   padding: 6px 0 3px 0;
   /**background: #fff;**/
   color:white;
+  width: 100%;
 }
 
-#footer .footer-top .footer-contact {
+.footer-top .footer-contact {
   margin-bottom: 30px;
 }
 
-#footer .footer-top .footer-contact h3 {
+.footer-top .footer-contact h3 {
   font-size: 28px;
   margin: 0 0 10px 0;
   padding: 2px 0 2px 0;
@@ -1709,14 +1712,14 @@ section {
   color: white;
 }
 
-#footer .footer-top .footer-contact p {
+.footer-top .footer-contact p {
   font-size: 14px;
   line-height: 24px;
   margin-bottom: 0;
   color: white;
 }
 
-#footer .footer-top h4 {
+.footer-top h4 {
   font-size: 16px;
   font-weight: bold;
   color: white;
@@ -1724,46 +1727,46 @@ section {
   padding-bottom: 12px;
 }
 
-#footer .footer-top .footer-links {
+.footer-top .footer-links {
   margin-bottom: 30px;
   color:white;
 }
 
-#footer .footer-top .footer-links ul {
+.footer-top .footer-links ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-#footer .footer-top .footer-links ul i {
+.footer-top .footer-links ul i {
   padding-right: 2px;
   color: #438E8E;
   font-size: 18px;
   line-height: 1;
 }
 
-#footer .footer-top .footer-links ul li {
+.footer-top .footer-links ul li {
   padding: 10px 0;
   display: flex;
   align-items: center;
 }
 
-#footer .footer-top .footer-links ul li:first-child {
+.footer-top .footer-links ul li:first-child {
   padding-top: 0;
 }
 
-#footer .footer-top .footer-links ul a {
+.footer-top .footer-links ul a {
   transition: 0.3s;
   display: inline-block;
   line-height: 1;
 }
 
-#footer .footer-top .footer-links ul a:hover {
+.footer-top .footer-links ul a:hover {
   text-decoration: none;
   color: #438E8E;
 }
 
-#footer .footer-top .social-links a {
+.footer-top .social-links a {
   font-size: 18px;
   display: inline-block;
   background: #fdfdfd;
@@ -1778,7 +1781,7 @@ section {
   transition: 0.3s;
 }
 
-#footer .footer-top .social-links a:hover {
+.footer-top .social-links a:hover {
   background: #438E8E;
   color: #fff;
   text-decoration: none;
