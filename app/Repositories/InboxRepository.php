@@ -72,12 +72,13 @@ class InboxRepository
      */
     public function create(array $data): Inbox
     {
+    
         return DB::transaction(function () use ($data) {
             $Inbox = $this->model::create([
                 'name' => $data['name'],
                 'phone' => $data['phone'],
                 'email' => $data['email'],
-                'desription' => $data['description'],
+                'description' => $data['description'],
             ]);
 
             if ($Inbox) {

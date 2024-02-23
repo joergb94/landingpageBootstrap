@@ -4,46 +4,44 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Repositories\WebSiteRepository;
-use Illuminate\Mail\Mailable;
-use Illuminate\Support\Facades\Mail;
-use App\Mail\MailableName;
+use App\Service\mail\SendMailService;
 use Illuminate\Support\Facades\Redirect;
+
 
 class WebSiteController extends Controller
 {
-    
+    protected $WebSiteRepository;
+    protected $SendMailService;
      /**
      * CompanyController constructor.
      *
      * @param UserRepository $UserRepository
      */
-    public function __construct(WebSiteRepository $WebSiteRepository)
+    public function __construct(WebSiteRepository $WebSiteRepository, SendMailService $SendMailService)
     {   
         $this->WebSiteRepository = $WebSiteRepository;
-    
+        $this->SendMailService = $SendMailService;
     }
     
     public function index(Request $request){
 
        $data = $this->WebSiteRepository->getWebSite();
-     
+
+       $a= $this->SendMailService->send([
+                            'name' => 'test test',
+                            'phone' => '9999999999',
+                            'email' => 'test.emai@email.com',
+                            'description' => 'hi this is a test',
+                        ]);
+    dd($a);
        return view('website.index',['data'=>$data]);
     }
     
 
     public function send_mail(Request $request){
-        
-        try {
 
-            $email = new MailableName($request->input());
-            Mail::to('alex.ortega@dedicatedpeople.us')->send($email);
+        $this->SendMailService->send($request->input());
 
-            return Redirect::back()->withSuccess("Send Message");
-          
-          } catch (\Exception $e) {
-          
-              return $e->getMessage();
-          }
-
+        return Redirect::back()->withSuccess("Send Message");
     }
 }

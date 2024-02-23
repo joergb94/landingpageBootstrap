@@ -1,10 +1,10 @@
 
   <div class="col-sm-12 mt-2 rounded-border preview-background-edition">
-    <div class="col-sm-12 bg-dark  rounded-border mt-5">
+    <div class="col-sm-12 bg-dark  rounded-border">
       <div class="row">
 
         <div class="col-lg-6 col-md-6 footer-contact">
-          <h3 class="text-white">Arsha</h3>
+          <h3 class="text-white">Flexbetta</h3>
         </div>
 
         <div class="col-lg-3 col-md-6 footer-links">

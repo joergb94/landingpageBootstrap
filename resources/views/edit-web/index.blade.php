@@ -6,7 +6,7 @@
     <div class="row">
       <div class="col-sm-6">
         <h4 class="card-title mb-0">
-          edit-web  <i class='fa fa-home'></i>
+          Edicion de sitio <i class='fa fa-home'></i>
         </h4>
       </div>
       <!--col-->

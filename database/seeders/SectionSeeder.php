@@ -60,8 +60,8 @@ class SectionSeeder extends Seeder
                   ['section_web_id'=>2,'type_item_web_id'=>4,'title'=>'CONÓCENOS','footer'=>'FUSIONAMOS LA INNOVACIÓN Y LA TECNOLOGÍA PARA OFRECER SOLUCIONES QUE IMPULSEN EL ÉXITO DE NUESTROS CLIENTES.','image'=>'assets/img/1.png'],
                   ['section_web_id'=>2,'type_item_web_id'=>14,'title'=>'NUESTROS OBJETIVOS','element'=>'slide','footer'=>'Somos mucho más que una empresa que te ofrece soluciones con tecnología; somos el socio tecnológico de negocios con el que puedes contar para abordar desafíos y alcanzar tus metas de manera efectiva.'],
                   ['section_web_id'=>3,'type_item_web_id'=>11,'title'=>'SERVICIOS','element'=>'div-not-head','footer'=>'','image'=>'images/items/home3.png'],
-                  ['section_web_id'=>4,'type_item_web_id'=>6,'title'=>'SERVICIOS','element'=>'div-not-head','footer'=>'','image'=>'images/items/home3.png'],
-                  ['section_web_id'=>null,'type_item_web_id'=>2,'title'=>'SERVICIOS','element'=>'div-not-head','footer'=>'','image'=>'images/items/home3.png'],
+                  ['section_web_id'=>4,'type_item_web_id'=>6,'title'=>'CONTACTANOS','element'=>'div-not-head','footer'=>'','image'=>'images/items/home3.png'],
+                  ['section_web_id'=>null,'type_item_web_id'=>2,'title'=>'FOOTER','element'=>'div-not-head','footer'=>'','image'=>'images/items/home3.png'],
 
         ];
 
