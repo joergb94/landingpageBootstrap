@@ -71,6 +71,7 @@ class UserController extends Controller
             $data = $this->UserRepository->findById($id);
             return view('users.detail',['data'=>$data]);
         }
+        abort(404);
     }
 
 
@@ -88,6 +89,7 @@ class UserController extends Controller
             $data = $this->UserRepository->findDataToBlade();
             return view('users.create',$data);
         }
+        abort(404);
     }
 
      /**
@@ -128,6 +130,7 @@ class UserController extends Controller
             $data = $this->UserRepository->findDataToBlade($id);
             return view('users.update',$data);
         }
+        abort(404);
     }
 
        /**
@@ -172,6 +175,7 @@ class UserController extends Controller
 
             return view('users.password',['data'=>$data]);
         }
+        abort(404);
     }
 
    /**
