@@ -67,10 +67,10 @@ class editionSiteController extends Controller
     * The function is called when the user clicks on the button "Add User" in the view "Users.index"
     * and it returns the view "Users.create" with the data of the table "Type_user" and "Location"
     * 
-    * @param UserRequest request The request object.
+    * @param Request request The request object.
     * @param location The location of the user
     */
-    public function create(UserRequest $request)
+    public function create(Request $request)
     {   
         if ($request->ajax()) {
             $data = $this->ItemWebRepository->findDataToBlade();
@@ -85,7 +85,7 @@ class editionSiteController extends Controller
     * @param UserStoreRequest request The request object.
     * @param location the location of the user
     */
-    public function store(UserStoreRequest $request){
+    public function store(Request $request){
         $data = $this->ItemWebRepository->create($request->input());
 
         return response()->json(Answer( $data['id'],
@@ -138,11 +138,11 @@ class editionSiteController extends Controller
     /**
      * It takes a request, a location, and an id, and returns a json response
      * 
-     * @param UserIdRequest request The request object.
+     * @param Request request The request object.
      * @param location The location of the resource.
      * @param id The id of the user you want to change the status of.
      */
-    public function change_status(UserIdRequest $request,$location,$id)
+    public function change_status(Request $request,$location,$id)
     {
         return response()->json($this->ItemWebRepository->updateStatus($request->id));
     } 

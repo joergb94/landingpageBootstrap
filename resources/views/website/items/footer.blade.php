@@ -2,8 +2,8 @@
   <div class="container-fluid">
     <div class="row">
 
-      <div class="col-md-2">
-        <img src="http://127.0.0.1:8000/assets/img/logo-footer.png" class="img-fluid">
+      <div class="col-md-2 text-center">
+        <img src="{{asset('assets/img/logo-footer.png')}}" class="img-fluid image-footer">
       </div>
 
       <div class="col-md-4 footer-contact">

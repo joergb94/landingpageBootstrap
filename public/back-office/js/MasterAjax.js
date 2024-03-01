@@ -535,6 +535,8 @@ function messageserror(data) {
         '</div>'
     });
   });
+  
+  return true;
 
 }
 //table actions 

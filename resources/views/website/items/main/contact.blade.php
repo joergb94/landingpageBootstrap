@@ -19,7 +19,7 @@
           </div>
 
           <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+            <form id="form-contact-{{$data->id}}" class="php-email-form">
               <div class="form-group has-default bmd-form-group">
                   <label class="text-white-f" for="name"><b>Nombre completo:</b></label>
                   <input type="text" name="name" class="form-control custom-input" id="name" required>
@@ -31,20 +31,22 @@
                 </div>
                 <div class="form-group col-md-6">
                   <label class="text-white-f" for="name"><b>Phone:</b></label>
-                  <input type="text" class="form-control custom-input" name="subject" id="subject" required>
+                  <input type="text" class="form-control custom-input" name="phone" id="phone" required>
                 </div>
               </div>
              
               <div class="form-group">
                 <label class="text-white-f" for="name"><b>Mensaje:</b></label>
-                <textarea class="form-control custom-input" name="message" rows="5" required></textarea>
+                <textarea class="form-control custom-input" name="description" rows="5" required></textarea>
               </div>
               <div class="my-3">
                 <div class="loading">Loading</div>
                 <div class="error-message"></div>
                 <div class="sent-message">Your message has been sent. Thank you!</div>
               </div>
-              <div class="text-center"><button type="submit" class="btn ">Send Message</button></div>
+              <div class="text-center">
+                <button  class="btn btn-get-send-email col-4"><h3 class="text-white mt-3 mb-3 ml-3 mr-3"><b>Enviar</b></h3></button>
+              </div>
             </form>
           </div>
 
@@ -52,3 +54,24 @@
 
       </div>
     </section>
+    <script src="{{ asset('back-office/vendor/jquery-3.2.1.min.js') }}"></script>
+    <script src="{{ asset('back-office/js/MasterAjax.js') }}"></script>
+    <script>
+      $("#form-contact-{{$data->id}}").submit(function send_email(baseUrl, id){
+        $('#btn-send-email').prop("disabled", true);
+          var my_url ='{{ \Request::root() }}/send';
+          var type = "POST";
+          var form = $(this).serialize()
+          actions.save(type, my_url, 'add', form, 'submod');
+
+      });
+
+      function returnsubmod(data) {
+          var request = messages(data);
+          if(request){
+            setTimeout(function(){
+              window.location.href = "{{ \Request::root() }}";
+            }, 500)
+          } 
+        }
+    </script>

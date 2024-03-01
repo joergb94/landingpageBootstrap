@@ -27,21 +27,18 @@ class WebSiteController extends Controller
 
        $data = $this->WebSiteRepository->getWebSite();
 
-       $a= $this->SendMailService->send([
-                            'name' => 'test test',
-                            'phone' => '9999999999',
-                            'email' => 'test.emai@email.com',
-                            'description' => 'hi this is a test',
-                        ]);
-    dd($a);
+      
        return view('website.index',['data'=>$data]);
     }
     
 
     public function send_mail(Request $request){
+        if ($request->ajax()) { 
+            $data = $this->SendMailService->send($request->input());
 
-        $this->SendMailService->send($request->input());
-
-        return Redirect::back()->withSuccess("Send Message");
+            return response()->json(Answer( 'success',
+                                        'Mensaje Enviado',
+                                        'Tu mensaje será rebizado'));
+        }
     }
 }

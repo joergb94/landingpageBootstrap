@@ -1913,3 +1913,10 @@ section {
   margin: 0; /* Elimina cualquier margen predeterminado */
   padding: 0; /* Elimina cualquier relleno predeterminado */
 }
+
+.btn-get-send-email{
+  background-color: #438E8E !important;
+}
+.image-footer{
+  width: 200px; 
+}
