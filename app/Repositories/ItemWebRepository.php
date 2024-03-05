@@ -3,7 +3,6 @@
 namespace App\Repositories;
 
 use App\Exceptions\GeneralException;
-use App\Models\Section;
 use App\Models\ItemWeb;
 use App\Models\ItemWebDetail;
 use Illuminate\Pagination\LengthAwarePaginator;
@@ -64,7 +63,7 @@ class ItemWebRepository
      * @throws \Throwable
      * @return Item
      */
-    public function create(array $data): Item
+    public function create(array $data): ItemWeb
     {
         return DB::transaction(function () use ($data) {
 
@@ -131,15 +130,15 @@ class ItemWebRepository
     }
 
  
-    public function deleteOrResotore($Item_id)
+    public function deleteOrResotore($ItemWeb_id)
     {    
-        $Bval = Item::withTrashed()->find($Item_id)->trashed();
+        $Bval = ItemWeb::withTrashed()->find($ItemWeb_id)->trashed();
 
             if($Bval){
-                $Item = Item::withTrashed()->find($Item_id)->restore();
+                $ItemWeb = ItemWeb::withTrashed()->find($ItemWeb_id)->restore();
                 $b=4;
             }else{
-                $Item = Item::find($Item_id)->delete();
+                $ItemWeb = ItemWeb::find($ItemWeb_id)->delete();
                 $b=3;
             }
 
