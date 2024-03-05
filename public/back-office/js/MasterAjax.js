@@ -102,6 +102,7 @@ const actions = {
             $('.btn-save').prop("disabled", false);
             console.log('Error:', data);
             messageserror(data);
+            returnsubmodError(data);
           }
         });
         break;

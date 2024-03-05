@@ -3,11 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Requests\User\UserRequest;
-use App\Http\Requests\User\UserIdRequest;
-use App\Http\Requests\User\UserPassRequest;
-use App\Http\Requests\User\UserUpdateRequest;
-use App\Http\Requests\User\UserStoreRequest;
+use App\Http\Requests\Inbox\InboxRequest;
+use App\Http\Requests\Inbox\InboxIdRequest;
+use App\Http\Requests\Inbox\InboxDeleteRequest;
+
 use App\Models\Inbox;
 use App\Repositories\InboxRepository;
 use Carbon\Carbon; 
@@ -38,7 +37,7 @@ class InboxController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index(Request $request)
+    public function index(InboxRequest $request)
     {   
         $data = [];
         $search = trim($request->search);
@@ -62,7 +61,7 @@ class InboxController extends Controller
     * 
     * @return The view is being returned.
     */
-    public function detail(Request $request,$id)
+    public function detail(InboxIdRequest $request,$id)
     {   
         if ($request->ajax()) {
             $data = $this->InboxRepository->findById($id);
@@ -76,7 +75,7 @@ class InboxController extends Controller
     * @param Request request The request object.
     * @param id the id of the record
     */
-    public function deleteOrResotore(Request $request,$id)
+    public function deleteOrResotore(InboxDeleteRequest $request,$id)
     {    
         $state = $this->InboxRepository->deleteOrResotore($id);
         return response()->json(Answer( $id,

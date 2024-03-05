@@ -1,19 +1,17 @@
 <?php
 
-namespace App\Http\Requests\home;
+namespace App\Http\Requests\EditSite;
 
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 
-class HomeRequest extends FormRequest
+class EditSiteIdRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
      */
     public function authorize(): bool
     {
-        return validateAccess(Auth::user(),1); 
+        return false;
     }
 
     /**

@@ -1,32 +1,30 @@
 <?php
 
-namespace App\Http\Requests\User;
+namespace App\Http\Requests\editSite;
 
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class UserIdRequest extends FormRequest
+class EditSiteRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
-     *
-     * @return bool
      */
-    public function authorize(Request $request)
+    public function authorize(): bool
     {
-        return validateAccess(Auth::user(),2); 
+        return validateAccess(Auth::user(),3);
     }
 
     /**
      * Get the validation rules that apply to the request.
      *
-     * @return array
+     * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array<mixed>|string>
      */
-    public function rules()
+    public function rules(): array
     {
         return [
-            'id' => 'required',
+            
         ];
     }
 }

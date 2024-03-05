@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\EditSite\EditSiteRequest;
+use App\Http\Requests\EditSite\EditSiteIdRequest;
+use App\Http\Requests\EditSite\EditSiteUpdateRequest;
 use Illuminate\Support\Facades\Auth;
 use App\Repositories\ItemWebRepository;
 
@@ -27,7 +30,7 @@ class editionSiteController extends Controller
     }
 
 
-    public function index(Request $request){
+    public function index(EditSiteRequest $request){
 
      
         
@@ -53,7 +56,7 @@ class editionSiteController extends Controller
     * 
     * @return The view is being returned.
     */
-    public function detail(Request $request,$id)
+    public function detail(EditSiteIdRequest $request,$id)
     {   
         if ($request->ajax()) {
             $data = $this->ItemWebRepository->findById($id);
@@ -108,7 +111,7 @@ class editionSiteController extends Controller
     * 
     * @return The view is being returned.
     */
-    public function edit(Request $request,$id)
+    public function edit(EditSiteIdRequest $request,$id)
     {   
     
             $data = $this->ItemWebRepository->findDataToBlade($id);
@@ -123,7 +126,7 @@ class editionSiteController extends Controller
     * @param location The location of the user
     * @param id The id of the user you want to update
     */
-    public function update(Request $request){ 
+    public function update(EditSiteUpdateRequest $request){ 
       
        $data = $this->ItemWebRepository->update($request->input());
        return response()->json(Answer( $data['id'],

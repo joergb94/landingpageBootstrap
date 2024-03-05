@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\Inbox\InboxCreateRequest;
 use App\Repositories\WebSiteRepository;
 use App\Service\mail\SendMailService;
 use Illuminate\Support\Facades\Redirect;
@@ -32,7 +33,7 @@ class WebSiteController extends Controller
     }
     
 
-    public function send_mail(Request $request){
+    public function send_mail(InboxCreateRequest $request){
         if ($request->ajax()) { 
             $data = $this->SendMailService->send($request->input());
 

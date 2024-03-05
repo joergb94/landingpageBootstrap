@@ -44,8 +44,8 @@
                 <div class="error-message"></div>
                 <div class="sent-message">Your message has been sent. Thank you!</div>
               </div>
-              <div class="text-center">
-                <button  class="btn btn-get-send-email col-4"><h3 class="text-white mt-3 mb-3 ml-3 mr-3"><b>Enviar</b></h3></button>
+              <div class="text-center"> 
+                <button  class="btn btn-get-send-email col-4"><h3 class="text-white mt-3 mb-3 ml-3 mr-3" id="text-send" ><b>Enviar</b></h3>  <div id="loading-send" style="display:none" class="spinner-border text-light"></div></button>
               </div>
             </form>
           </div>
@@ -57,21 +57,44 @@
     <script src="{{ asset('back-office/vendor/jquery-3.2.1.min.js') }}"></script>
     <script src="{{ asset('back-office/js/MasterAjax.js') }}"></script>
     <script>
-      $("#form-contact-{{$data->id}}").submit(function send_email(baseUrl, id){
+      $("#form-contact-{{$data->id}}").submit(function send_email(event){
+        // Prevent the form from submitting
+        event.preventDefault();
+        $("#text-send").hide();
+        $("#loading-send").show();
+        // Disable the submit button to prevent multiple submissions
         $('#btn-send-email').prop("disabled", true);
-          var my_url ='{{ \Request::root() }}/send';
-          var type = "POST";
-          var form = $(this).serialize()
-          actions.save(type, my_url, 'add', form, 'submod');
+
+        // Perform your form submission logic
+        var my_url = '{{ \Request::root() }}/send';
+        var type = "POST";
+        var form = $(this).serialize();
+        actions.save(type, my_url, 'add', form, 'submod');
 
       });
 
+      // Add the beforeunload event listener to cancel reload/refresh
+      window.addEventListener('beforeunload', function(event) {
+          // If the form is currently disabled (indicating submission in progress)
+          if ($('#btn-send-email').prop("disabled")) {
+              // Cancel the event to prevent the page from unloading
+              event.preventDefault();
+              // Set a dummy return value (not necessary in all browsers)
+              event.returnValue = '';
+          }
+      });
+
       function returnsubmod(data) {
-          var request = messages(data);
-          if(request){
-            setTimeout(function(){
-              window.location.href = "{{ \Request::root() }}";
-            }, 500)
-          } 
+            var request = messages(data);
+            $("#loading-send").hide();
+            $("#text-send").show();
+            $('#btn-send-email').prop("disabled", false);
+            $("#form-contact-{{$data->id}}")[0].reset();
+        }
+
+        function returnsubmodError(data) {
+            $("#loading-send").hide();
+            $("#text-send").show();
+            $('#btn-send-email').prop("disabled", false);
         }
     </script>
