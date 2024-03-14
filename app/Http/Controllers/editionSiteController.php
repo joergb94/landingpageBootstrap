@@ -145,7 +145,7 @@ class editionSiteController extends Controller
      * @param location The location of the resource.
      * @param id The id of the user you want to change the status of.
      */
-    public function change_status(Request $request,$location,$id)
+    public function change_status(Request $request,$id)
     {
         return response()->json($this->ItemWebRepository->updateStatus($request->id));
     } 

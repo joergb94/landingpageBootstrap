@@ -20,22 +20,6 @@ use App\Http\Controllers\InboxController;
 
 Route::get('/', [WebSiteController::class, 'index']);
 
-Route::get('/contact', function () {
-    return view('website.contactPrincipal');
-});
-
-Route::get('/careers', function () {
-    return view('website.careers');
-});
-Route::get('/careers/mx', function () {
-    return view('website.careers.mx');
-});
-Route::get('/careers/bz', function () {
-    return view('website.careers.bz');
-});
-
-
-
 Route::post('/send', [WebSiteController::class, 'send_mail']);
 
 

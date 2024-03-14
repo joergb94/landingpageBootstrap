@@ -88,6 +88,8 @@ class SectionSeeder extends Seeder
                   ['item_web_id'=>4, 'element_web_id'=>3, 'name'=>'SERVICIOS DE GESTIÓN DE PROYECTOS ','description'=>'basados en TICs.','image'=>'',],
                   ['item_web_id'=>4, 'element_web_id'=>3, 'name'=>'PRODUCTOS DE INFORMACIÓN GEOGRÁFICA ','description'=>'Ofrecemos soluciones de información basadas en GIS para el análisis espacial de datos, brindándole información valiosa para la toma de decisiones.','image'=>'',],
                   ['item_web_id'=>4, 'element_web_id'=>3, 'name'=>'DESARROLLO DE SOFTWARE','description'=>'Creamos soluciones personalizadas para satisfacer sus requisitos específicos, utilizando las últimas tecnologías y mejores prácticas de la industria.','image'=>'',],
+                  ['item_web_id'=>6, 'element_web_id'=>3, 'name'=>'99999999','description'=>'Fracc. Real Montejo, C.P. 97345,Dzitya ,Yucatán, México.','image'=>'',],
+                  ['item_web_id'=>6, 'element_web_id'=>2, 'name'=>'#','description'=>'#','image'=>'',],
                  
                   
        

@@ -8,6 +8,10 @@
     <meta name="description" content="au theme template">
     <meta name="author" content="Hau Nguyen">
     <meta name="keywords" content="au theme template">
+    <!-- Favicons -->
+    <link href="{{asset('back-office/images/icons/icon.png')}}" rel="icon">
+    <link href="{{asset('back-office/images/icons/icon.png')}}" rel="apple-touch-icon">
+
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- Title Page-->
@@ -15,7 +19,6 @@
 
     <!-- PWA  -->
     <meta name="theme-color" content="#00518c"/> 
-    <link rel="apple-touch-icon" href="{{ asset('back-office/images/icons/pwa.png') }}">
     <link rel="manifest" href="{{ asset('back-office//manifest.json') }}">
     <meta name="viewport" content= "width=device-width, user-scalable=no">
     <!-- Fontfaces CSS-->

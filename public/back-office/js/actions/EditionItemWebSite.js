@@ -52,6 +52,9 @@ function saveAllEditorContent(item = {title:'',footer:'', children:[]}) {
           child.name = cleanDescription;
           child.description = cleanDescription;
 
+        }else if(child.element_web.name == 'link'){
+          child.name = $("#"+child.element_web.name+'-name-'+child.id).val();
+          child.description = $("#"+child.element_web.name+'-description-'+child.id).val();
         }else{
           const editorName = editorInstances.find(obj => obj.id === child.element_web.name+'-name-'+child.id);
           const editorDescription = editorInstances.find(obj => obj.id === child.element_web.name+'-description-'+child.id);

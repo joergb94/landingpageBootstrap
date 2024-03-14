@@ -3,7 +3,8 @@
 namespace App\Http\Requests\EditSite;
 
 use Illuminate\Foundation\Http\FormRequest;
-
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 class EditSiteIdRequest extends FormRequest
 {
     /**
@@ -11,7 +12,7 @@ class EditSiteIdRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return validateAccess(Auth::user(),3);
     }
 
     /**

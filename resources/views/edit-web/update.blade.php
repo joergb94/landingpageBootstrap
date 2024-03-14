@@ -53,6 +53,18 @@
                                       <div class="card-body">
                                         <textarea id="{{$item->element_web['name']}}-description-{{$item->id}}" class="editor">{!! $item->description !!}</textarea>
                                       </div>
+                                  @elseif( $item->element_web['name'] == 'link')
+                                      <div class="card-header" ><h6>Links</h6></div>
+                                      <div class="card-body">
+                                          <div class="form-group">
+                                            <label for="usr">Facebook:</label>
+                                            <input type="text" class="form-control" id="{{$item->element_web['name']}}-name-{{$item->id}}" value="{{$item->name}}">
+                                          </div>
+                                          <div class="form-group">
+                                            <label for="usr">Instagram:</label>
+                                            <input type="text" class="form-control" id="{{$item->element_web['name']}}-description-{{$item->id}}" value="{{$item->description}}">
+                                          </div>
+                                      </div>
                                   @else
                                     <div class="card-header" ><h6>Texto Principal</h6></div>
                                       <div class="card-body">
