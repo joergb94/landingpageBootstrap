@@ -55,7 +55,7 @@
       @include('website.items.main.'.$main_item->type_item_web->name,['data' =>  $main_item])
 
     @endforeach
-  
+    
   </main><!-- End #main -->
 
   <!-- ======= Footer ======= -->
@@ -67,6 +67,7 @@
 
   <!-- End Footer -->
   <div id="preloader"></div>
+  <a  href="https://wa.me/529999999999" target="_blank"class="back-to-top2 d-flex align-items-center justify-content-center active"><i class="bi bi-whatsapp"></i></a>
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->

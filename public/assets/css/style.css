@@ -82,7 +82,7 @@ h1, h2, h3, h4, h5, h6 {
   visibility: hidden;
   opacity: 0;
   right: 15px;
-  bottom: 15px;
+  bottom: 65px;
   z-index: 996;
   background: #438E8E;
   width: 40px;
@@ -107,6 +107,39 @@ h1, h2, h3, h4, h5, h6 {
   opacity: 1;
 }
 
+/*--------------------------------------------------------------
+# whatsapp button
+--------------------------------------------------------------*/
+
+.back-to-top2 {
+  position: fixed;
+  visibility: hidden;
+  opacity: 0;
+  right: 15px;
+  bottom: 15px;
+  z-index: 996;
+  background: #12c41b;
+  width: 40px;
+  height: 40px;
+  border-radius: 50px;
+  transition: all 0.4s;
+}
+
+.back-to-top2 i {
+  font-size: 24px;
+  color: #fff;
+  line-height: 0;
+}
+
+.back-to-top2:hover {
+  background: #6be975;
+  color: #fff;
+}
+
+.back-to-top2.active {
+  visibility: visible;
+  opacity: 1;
+}
 /*--------------------------------------------------------------
 # Header
 --------------------------------------------------------------*/
@@ -1920,3 +1953,4 @@ section {
 .image-footer{
   width: 200px; 
 }
+
