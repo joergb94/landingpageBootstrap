@@ -1,4 +1,5 @@
 var allEditors = document.querySelectorAll('.editor');
+var urlEdit = $('#url').val();
 var editorInstances = []; // Array to store references to editor instances
 
 for (var i = 0; i < allEditors.length; ++i) {
@@ -73,7 +74,7 @@ function saveAllEditorContent(item = {title:'',footer:'', children:[]}) {
 }
 function returnsubmod(data) {
   messages(data);
-  window.location.href = url;
+  window.location.href = urlEdit;
 }
 
 
@@ -93,7 +94,7 @@ const editItemweb = {
     }).then((result) => {
       if (result.value) {
         var form =  saveAllEditorContent(item);
-        var my_url = url;
+        var my_url = urlEdit;
         var type = "PUT";
         var result =  actions.save(type, my_url, 'update', form, 'submod');
       }

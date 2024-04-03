@@ -5,7 +5,7 @@
           <h1 class="title-{{$data->id}}">{!! $data->title !!}</h1>
           <h2 class="footer-{{$data->id}}">{!! $data->footer !!}</h2>
         <div class="hero-div d-flex justify-content-center justify-content-lg-start">
-          <a href="#about" class="btn btn-get-started scrollto button-{{$data->children[0]->id}}">{{$data->children[0]->description}}</a>
+          <a href="#contact" class="btn btn-get-started scrollto button-{{$data->children[0]->id}}">{{$data->children[0]->description}}</a>
         </div>
       </div>
     </div>

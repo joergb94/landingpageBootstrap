@@ -129,7 +129,7 @@ class editionSiteController extends Controller
     public function update(EditSiteUpdateRequest $request){ 
       
        $data = $this->ItemWebRepository->update($request->input());
-       return response()->json(Answer( $data['id'],
+       return response()->json(Answer($data['id'],
        $this->module_name,
        $this->text_module[0],
        "success",
@@ -147,7 +147,7 @@ class editionSiteController extends Controller
      */
     public function change_status(Request $request,$id)
     {
-        return response()->json($this->ItemWebRepository->updateStatus($request->id));
+        //return response()->json($this->ItemWebRepository->updateStatus($request->id));
     } 
 
    /**
