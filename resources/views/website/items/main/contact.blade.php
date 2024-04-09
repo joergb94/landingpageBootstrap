@@ -30,7 +30,7 @@
                   <input type="email" class="form-control custom-input" name="email" id="email" required>
                 </div>
                 <div class="form-group col-md-6">
-                  <label class="text-white-f" for="name"><b>Telefono:</b></label>
+                  <label class="text-white-f" for="name"><b>Teléfono:</b></label>
                   <input type="text" class="form-control custom-input" name="phone" id="phone" required>
                 </div>
               </div>

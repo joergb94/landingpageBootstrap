@@ -47,7 +47,7 @@
       <div class="col-md-3 footer-links text-center">
         <h4>Nuestras redes sociales</h4>
         <div class="social-links mt-3">
-          <a href="{{$data->children[1]->description}}" class="facebook" target="_blank"><i class="bx bxl-facebook"></i></a>
+          <a href="{{$data->children[1]->name}}" class="facebook" target="_blank"><i class="bx bxl-facebook"></i></a>
           <a href="{{$data->children[1]->description}}" class="instagram" target="_blank"><i class="bx bxl-instagram"></i></a>
         </div>
       </div>

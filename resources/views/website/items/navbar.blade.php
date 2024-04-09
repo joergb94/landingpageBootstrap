@@ -6,7 +6,7 @@
       <nav id="navbar" class="navbar">
         <ul>
           <li><a class="nav-link scrollto active" href="#hero">Inicio</a></li>
-          <li><a class="nav-link scrollto" href="#about">Conocenos</a></li>
+          <li><a class="nav-link scrollto" href="#about">Conócenos</a></li>
           <li><a class="nav-link scrollto" href="#services">Servicios</a></li>
           <li><a class="nav-link scrollto" href="#contact">Contacto</a></li>
         </ul>
