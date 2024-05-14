@@ -21,7 +21,10 @@ class SiteMail extends Mailable
 
     public function build()
     {
-        return $this->subject('Mensaje de Flexbetta-Web'.$this->now)
-                    ->view('emails.inbox')->with($this->data);
+        return $this->from('marketing@flexbetta.com.mx')
+                ->to($this->data['email'])
+                ->subject('Mensaje de Flexbetta-Web ' . $this->now)
+                ->view('emails.inbox')
+                ->with($this->data);
     }
 }

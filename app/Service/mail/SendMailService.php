@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Redirect;
 class SendMailService 
 {
     protected $InboxRepository;
+    protected $mail;
      /**
      * CompanyController constructor.
      *
@@ -21,16 +22,18 @@ class SendMailService
     public function __construct(InboxRepository $InboxRepository)
     {   
         $this->InboxRepository = $InboxRepository;
+        $this->mail = 'cesar.guzman@flexbetta.com.mx';
     
     }
 
     public function send($data){
         
         try {
+            // Set maximum execution time limit to 60 seconds
+            set_time_limit(120);
             $this->InboxRepository->create($data);
             $email = new SiteMail($data);
-            Mail::to('test.email@email.com')->send($email);
-            
+            $send_mail = Mail::to($this->mail)->send($email);
             return true;
           
           } catch (\Exception $e) {

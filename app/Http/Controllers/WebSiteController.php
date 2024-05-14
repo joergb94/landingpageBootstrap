@@ -36,7 +36,6 @@ class WebSiteController extends Controller
     public function send_mail(InboxCreateRequest $request){
         if ($request->ajax()) { 
             $data = $this->SendMailService->send($request->input());
-
             return response()->json(Answer( 'success',
                                         'Mensaje Enviado',
                                         'Tu mensaje será rebizado'));
