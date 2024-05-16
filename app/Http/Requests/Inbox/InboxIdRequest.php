@@ -24,7 +24,7 @@ class InboxIdRequest extends FormRequest
     public function rules(): array
     {
         return [
-             'id'=>'required'
+             'action'=>'required'
         ];
     }
 }
