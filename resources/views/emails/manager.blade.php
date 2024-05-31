@@ -17,6 +17,17 @@ body {
 }
 
 
+.header2 {
+    background-color: #3d3868;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    padding: 30px;
+    text-align: center;
+    font-size: 35px;
+    color: white;
+}
 .header {
     background-color: #3d3868;
     background-image: url("https://i.pinimg.com/originals/78/05/28/780528c2466c9284374cb1809ddd9203.png");
@@ -69,15 +80,14 @@ body {
 
 .column {
     float: left;
-    width: 50%;
+    width: 100%;
     padding: 10px;
     min-height: 300px;
     text-align: center;
 }
 .text-mail{
-    padding-top:50px;
+    padding-top:15%;
 }
-
 
 /* Medium screens (tablets, 768px and below) */
 @media screen and (max-width: 768px) {
@@ -85,7 +95,10 @@ body {
         width: 100%;
         float: none;
     }
- 
+    
+    .text-mail{
+        padding-top:15%;
+    }
 }
 
 /* Small screens (phones, 480px and below) */
@@ -97,7 +110,7 @@ body {
     }
     
     .text-mail{
-        padding-top:100px;
+        padding-top:35%;
     }
 }
 
@@ -154,49 +167,33 @@ body {
     min-width: 300px;
     padding-top: 10%;
 }
-
-
-
 </style>
 </head>
 <body>
 <div class="row">
-<div class="header">
+    <div class="header">
+    </div>
+    <div class="header2">
+    	<img width="96" height="96" src="https://img.icons8.com/nolan/96/e-learning.png" alt="e-learning"/>
+      <h3 style="color: white;">¡Tienes un nuevo mensaje!</h3>
+</div>
+</div>
+<div class="row">
+   <div class="column" style="background-color:white; text-aling:center;">
+  	  	<h2 class="text-aqua">Datos de mensaje</h2>
+          <h3>Nombre: <p>{{$name}}</p></h3>
+          <h3>Correo: <p>{{$email}}</p></h3>
+          <h3>Telefono: <p>{{$phone}}</p></h3>
+          <h3>Mensaje: <p>{{$description}}</p></h3>
+          <a href="{{ \Request::root() }}/adminFlex/inboxes" class="button-flex-link" target="_blank" >Ver mas</a>
+  </div>
   
-</div>
-</div>
-<div class="row">
-<div class="column" style="background-color:white;">
-  		<h2 class="text-aqua text-mail">Te informamos que...</h2>
-        <h3>Nuestro equipo se encuentra revisando tu consulta y nos pondremos en contacto contigo a la mayor brevedad posible para proporcionarte una atencion personalizada.</h3>
-  </div>
-  <div class="column" style="background-color:white;">
-  <h2 class="text-aqua text-mail">Gracias por contactarnos</h2>
-    <img style ="width:100px; height:100px;" src="https://img.icons8.com/nolan/96/new-message.png" alt="flexbetta">
-  </div>
-</div>
-<div class="row">
- <div class="column" style="background-color:#cccccc;">
-  <h1 class="text-mail">Nuestros servicios</h1>
-  <img style ="width:100px; height:100px;" src="https://img.icons8.com/nolan/96/1A6DFF/C822FF/networking-manager.png" alt="flexbetta">
-       
-  </div>
-  <div class="column" style="background-color:#cccccc;  text-align: left;">
-  		<h2 style="padding-top:50px">¿Quieres conocer mas </h2>
-        <h2>sobre nuestros </h2>
-        <h2>servicios?</h2>
-  		<a href="{{ \Request::root() }}" class="button-flex-link" target="_blank" >Ver mas</a>
-  </div>
 </div>
 
 <div class="footer">
-	<a href="https://www.facebook.com/Flexbetta"  target="_blank">
-      <img class="icon-f"  src="https://img.icons8.com/glyph-neue/64/FFFFFF/facebook.png" alt="facebook"/>
-   </a>
-   <a href="https://www.instagram.com/flexbetta/"  target="_blank">
-      <img class="icon-f" src="https://img.icons8.com/glyph-neue/64/FFFFFF/instagram-new--v1.png" alt="instagram"/>
-   </a>
 </div>
 
 </body>
 </html>
+
+

@@ -10,7 +10,7 @@ use App\Mail\SiteMail;
 use Illuminate\Support\Facades\Redirect;
 
 
-class SendMailService 
+class SendMailManagerService 
 {
     protected $InboxRepository;
     protected $mail;
@@ -22,7 +22,7 @@ class SendMailService
     public function __construct(InboxRepository $InboxRepository)
     {   
         $this->InboxRepository = $InboxRepository;
-        $this->mail = 'cesar.guzman@flexbetta.com.mx';
+        $this->mail = 'joseraymundogamboa30@gmail.com';
     
     }
 
@@ -33,11 +33,10 @@ class SendMailService
             set_time_limit(120);
             $this->InboxRepository->create($data);
             $email = new SiteMail($data,$view);
-            $send_mail = Mail::to($data['email'])->send($email);
+            $send_mail = Mail::to($this->mail)->send($email);
             return true;
           
           } catch (\Exception $e) {
-                dd($e->getMessage());
               return $e->getMessage();
           }
 

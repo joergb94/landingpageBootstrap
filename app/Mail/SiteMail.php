@@ -13,9 +13,10 @@ class SiteMail extends Mailable
     public $data;
     public $now;
 
-    public function __construct(array $data)
+    public function __construct(array $data, String $view)
     {
         $this->data = $data;
+        $this->view = $view;
         $this->now = Carbon::now();
     }
 
@@ -24,7 +25,7 @@ class SiteMail extends Mailable
         return $this->from('marketing@flexbetta.com.mx')
                 ->to($this->data['email'])
                 ->subject('Mensaje de Flexbetta-Web ' . $this->now)
-                ->view('emails.inbox')
+                ->view($this->view)
                 ->with($this->data);
     }
 }
