@@ -31,6 +31,7 @@ class SendMailManagerService
     public function send($data,$view){
         
         try {
+            $data['email_to']=$data['email'];
             $data['email']=$this->mail;
             // Set maximum execution time limit to 60 seconds
             set_time_limit(120);

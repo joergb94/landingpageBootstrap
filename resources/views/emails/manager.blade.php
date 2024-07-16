@@ -160,7 +160,7 @@ body {
    <div class="column" style="background-color:white; text-aling:center;">
   	  	<h2 class="text-aqua">Datos de mensaje</h2>
             <h3>Nombre: <p>{{ isset($name) ? $name : 'N/A' }}</p></h3>
-            <h3>Correo: <p>{{ isset($email) ? $email : 'N/A' }}</p></h3>
+            <h3>Correo: <p>{{ isset($email_to) ? $email_to : 'N/A' }}</p></h3>
             <h3>Telefono: <p>{{ isset($phone) ? $phone : 'N/A' }}</p></h3>
             <h3>Mensaje: <p>{{ isset($description) ? $description : 'N/A' }}</p></h3>
           <a href="{{ \Request::root() }}/adminFlex/inboxes" class="button-flex-link" target="_blank" >Ver más</a>
