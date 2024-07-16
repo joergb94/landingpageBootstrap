@@ -22,7 +22,7 @@ class SendMailManagerService
     public function __construct(InboxRepository $InboxRepository)
     {   
         $this->InboxRepository = $InboxRepository;
-        $this->mail = 'joseraymundogamboa30@gmail.com';
+        $this->mail = 'marketing@flexbetta.com.mx';
     
     }
 

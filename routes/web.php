@@ -20,9 +20,9 @@ use App\Http\Controllers\InboxController;
 
 Route::get('/', [WebSiteController::class, 'index']);
 
-Route::get('/test', function () {
-    return view('emails.manager');
-});
+/*Route::get('/test', function () {
+    return view('emails.inbox');
+});*/
 
 Route::post('/send', [WebSiteController::class, 'send_mail']);
 
