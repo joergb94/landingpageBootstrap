@@ -37,7 +37,6 @@ class SendMailService
             return true;
           
           } catch (\Exception $e) {
-                dd($e->getMessage());
               return $e->getMessage();
           }
 
