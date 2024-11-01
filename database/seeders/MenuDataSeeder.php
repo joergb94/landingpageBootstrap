@@ -24,5 +24,7 @@ class MenuDataSeeder extends Seeder
       foreach($menus as $menu){
             DB::table('menu_data')->insert($menu);
         }
+
+        DB::table('menu_data')->insert($menu);
     }
 }

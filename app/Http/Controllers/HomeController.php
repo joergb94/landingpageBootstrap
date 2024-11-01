@@ -34,7 +34,6 @@ class HomeController extends Controller
      */
     public function index(Request $request)
     {   
-        $this->HomeRepository->add_views();
         $data =  $this->HomeRepository->getSearchPaginated();
         if ($request->ajax()) { 
             return view('home.items.table',['data'=>$data,'dm'=>accesUrl(Auth::user(),$this->menu_id)]);

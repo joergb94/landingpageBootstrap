@@ -1,12 +1,12 @@
 <div id="index_table">
-    <div class="jumbotron">
+    <div class="col-12">
         <h3>Estadisticas</h3>
         <div class="row w-100">
                 <div class="col-sm-4">
                     <div class="card border-success mx-sm-1 p-3">
                         <div class="card border-success shadow text-success p-3 my-card"><h4>Vistas <span class="fa fa-eye text-success" aria-hidden="true"></h4></span></div>
                         <div class="text-success text-center mt-3"></div>
-                        <div class="text-success text-center mt-2"><h1>{{$data['views']->quantity}}</h1></div>
+                        <div class="text-success text-center mt-2"><h1>{{$data['views']['quantity']}}</h1></div>
                     </div>
                 </div>
                 <div class="col-sm-4">
